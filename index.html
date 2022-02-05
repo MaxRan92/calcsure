@@ -26,34 +26,30 @@
                     <h4>Age</h4>
                     <input id="age" type="number">
                 </div>
-                <div class="radio-gender">
+                <div class="gender">
                     <h4>Gender</h4>
-                    <div class="radio-buttons">
-                        <div class="radio-male">
-                            <label for="male">Male</label>
-                            <input type="radio" id="male" class="radio" name="gender" value="male" required>
-                        </div>
-                        <div class="radio-female">
-                            <label for="female">Female</label>
-                            <input type="radio" id="female" class="radio" name="gender" value="female">
-                        </div>
-                        <div class="radio-unknown">
-                            <label for="unknown">Prefer not to say</label>
-                            <input type="radio" id="unknown" class="radio" name="gender" value="unknown">
-                        </div>
+                    <div class="img-buttons">
+                        <button data-type="male" class="">
+                            <i class="fas fa-male"></i>
+                        </button>
+                        <button data-type="female" class="">
+                            <i class="fas fa-female"></i>
+                        </button>
                     </div>
                 </div>
             </div>
             <div class="input-group">
                 <div class="radio-marital">
                     <h4>Marital Status</h4>
-                    <div class="radio-married">
-                        <label for="married">Married</label>
-                        <input type="radio" id="married" class="radio" name="marital_status" value="married" required>
-                    </div>
-                    <div class="radio-unmarried">
-                        <label for="unmarried">Not Married</label>
-                        <input type="radio" id="unmarried" class="radio" name="marital_status" value="unmarried">
+                    <div class="radio-buttons">
+                        <div class="radio-married">
+                            <label for="married">Married</label>
+                            <input type="radio" id="married" class="radio" name="marital_status" value="married" required>
+                        </div>
+                        <div class="radio-unmarried">
+                            <label for="unmarried">Not Married</label>
+                            <input type="radio" id="unmarried" class="radio" name="marital_status" value="unmarried">
+                        </div>
                     </div>
                 </div>
                 <div class="radio-health">
@@ -108,5 +104,8 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
+
+    <!-- font awesome script -->
+    <script src="https://kit.fontawesome.com/2fd86cf1c2.js" crossorigin="anonymous"></script>
 </body>
 </html>

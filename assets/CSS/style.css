@@ -72,7 +72,7 @@ h4 {
     flex: 100%;
 }
 
-.radio-buttons {
+.img-buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -80,6 +80,8 @@ h4 {
     margin: auto;
 }
 
-.input-age, .radio-gender {
+.input-age, 
+.gender,
+.radio-marital {
     text-align: center;
 }
