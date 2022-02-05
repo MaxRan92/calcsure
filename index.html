@@ -18,9 +18,12 @@
     </h1>
 
     <div class="data-input">
-        <label for="age">Age</label>
-        <input id="age" type="number">
+        <div class="input-age">
+            <h3>Age</h3>
+            <input id="age" type="number">
+        </div>
         <div class="radio-gender">
+            <h3>Gender</h3>
             <div class="radio-male">
                 <label for="male">Male</label>
                 <input type="radio" id="male" class="radio" name="gender" value="male" required>
@@ -33,6 +36,22 @@
                 <label for="unknown">Prefer not to say</label>
                 <input type="radio" id="unknown" class="radio" name="gender" value="unknown">
             </div>
+        </div>
+        <div class="radio-marital">
+            <h3>Marital Status</h3>
+            <div class="radio-married">
+                <label for="married">Married</label>
+                <input type="radio" id="married" class="radio" name="marital_status" value="married" required>
+            </div>
+            <div class="radio-unmarried">
+                <label for="unmarried">Not Married</label>
+                <input type="radio" id="unmarried" class="radio" name="marital_status" value="unmarried">
+            </div>
+        </div>
+        <div class="input-coverage">
+            <h3>Select the requested coverage</h3>
+            <input type="range" id="coverage" name="coverage" min="10000" max="1000000" step="10000">
+            <p>EUR <span id="coverage-value"></span></p>
         </div>
     </div>
     
