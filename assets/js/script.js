@@ -1,3 +1,5 @@
+
+/*code inspired by https://www.w3schools.com/howto/howto_js_rangeslider.asp */
 var slider = document.getElementById("coverage");
 var output = document.getElementById("coverage-value");
 output.innerHTML = slider.value; // Display the default slider value
