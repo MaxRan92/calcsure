@@ -1,11 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto&display=swap');
 
+/* General*/
+
+body {
+    background-color: white;
+}
+
+
+/* Heading */
+
 .heading {
     text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5rem;
+    color: #1F497D;
 }
 
 .logo {
-    height: 10rem;
+    height: 5rem;
     width: auto;
     margin: auto;
+    display: block;
 }
