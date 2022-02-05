@@ -22,11 +22,16 @@
 
 /*Body*/
 
-.data-input {
+.data-input,
+.data-output {
     background-color: #E1E2DF;
     box-sizing: border-box;
-    border-radius: 100%;
+    border-radius: 20px;
+    border-width: 2px;
+    border-color: #1F497D;
+    border-style: solid;
     width: 70%;
     height: 40vh;
     margin: 5vh auto;
+    padding: 5px;
 }
