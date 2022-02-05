@@ -1,2 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto&display=swap');
 
+.heading {
+    text-align: center;
+}
+
+.logo {
+    height: 10rem;
+    width: auto;
+    margin: auto;
+}
