@@ -21,49 +21,55 @@
         <h2>Insert your data</h2>
         <div class="personal-data">
             <h3>Personal Information</h3>
-            <div class="input-age">
-                <h4>Age</h4>
-                <input id="age" type="number">
-            </div>
-            <div class="radio-gender">
-                <h4>Gender</h4>
-                <div class="radio-male">
-                    <label for="male">Male</label>
-                    <input type="radio" id="male" class="radio" name="gender" value="male" required>
+            <div class="input-group">
+                <div class="input-age">
+                    <h4>Age</h4>
+                    <input id="age" type="number">
                 </div>
-                <div class="radio-female">
-                    <label for="female">Female</label>
-                    <input type="radio" id="female" class="radio" name="gender" value="female">
-                </div>
-                <div class="radio-unknown">
-                    <label for="unknown">Prefer not to say</label>
-                    <input type="radio" id="unknown" class="radio" name="gender" value="unknown">
-                </div>
-            </div>
-            <div class="radio-marital">
-                <h4>Marital Status</h4>
-                <div class="radio-married">
-                    <label for="married">Married</label>
-                    <input type="radio" id="married" class="radio" name="marital_status" value="married" required>
-                </div>
-                <div class="radio-unmarried">
-                    <label for="unmarried">Not Married</label>
-                    <input type="radio" id="unmarried" class="radio" name="marital_status" value="unmarried">
+                <div class="radio-gender">
+                    <h4>Gender</h4>
+                    <div class="radio-buttons">
+                        <div class="radio-male">
+                            <label for="male">Male</label>
+                            <input type="radio" id="male" class="radio" name="gender" value="male" required>
+                        </div>
+                        <div class="radio-female">
+                            <label for="female">Female</label>
+                            <input type="radio" id="female" class="radio" name="gender" value="female">
+                        </div>
+                        <div class="radio-unknown">
+                            <label for="unknown">Prefer not to say</label>
+                            <input type="radio" id="unknown" class="radio" name="gender" value="unknown">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="radio-health">
-                <h4>Health Condition</h4>
-                <div class="radio-good-health">
-                    <label for="good-health">Good</label>
-                    <input type="radio" id="good-health" class="radio" name="health_condition" value="good-health" required>
+            <div class="input-group">
+                <div class="radio-marital">
+                    <h4>Marital Status</h4>
+                    <div class="radio-married">
+                        <label for="married">Married</label>
+                        <input type="radio" id="married" class="radio" name="marital_status" value="married" required>
+                    </div>
+                    <div class="radio-unmarried">
+                        <label for="unmarried">Not Married</label>
+                        <input type="radio" id="unmarried" class="radio" name="marital_status" value="unmarried">
+                    </div>
                 </div>
-                <div class="radio-medium-health">
-                    <label for="medium-health">Medium</label>
-                    <input type="radio" id="medium-health" class="radio" name="health_condition" value="medium-health" required>
-                </div>
-                <div class="radio-poor-health">
-                    <label for="poor-health">Poor</label>
-                    <input type="radio" id="poor-health" class="radio" name="health_condition" value="poor-health" required>
+                <div class="radio-health">
+                    <h4>Health Condition</h4>
+                    <div class="radio-good-health">
+                        <label for="good-health">Good</label>
+                        <input type="radio" id="good-health" class="radio" name="health_condition" value="good-health" required>
+                    </div>
+                    <div class="radio-medium-health">
+                        <label for="medium-health">Medium</label>
+                        <input type="radio" id="medium-health" class="radio" name="health_condition" value="medium-health" required>
+                    </div>
+                    <div class="radio-poor-health">
+                        <label for="poor-health">Poor</label>
+                        <input type="radio" id="poor-health" class="radio" name="health_condition" value="poor-health" required>
+                    </div>
                 </div>
             </div>
         </div>
@@ -75,7 +81,7 @@
                 <p>EUR <span id="coverage-value"></span></p>
             </div>
             <div class="radio-premium-profile">
-                <h4>Health Condition</h4>
+                <h4>Premium Profile</h4>
                 <div class="radio-increasing">
                     <label for="increasing">Increasing</label>
                     <input type="radio" id="increasing" class="radio" name="premium_profile" value="increasing" required>
