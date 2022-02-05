@@ -17,7 +17,24 @@
         Find the best insurance plan for you!
     </h1>
 
-    <div class="data-input"></div>
+    <div class="data-input">
+        <label for="age">Age</label>
+        <input id="age" type="number">
+        <div class="radio-gender">
+            <div class="radio-male">
+                <label for="male">Male</label>
+                <input type="radio" id="male" class="radio" name="gender" value="male" required>
+            </div>
+            <div class="radio-female">
+                <label for="female">Female</label>
+                <input type="radio" id="female" class="radio" name="gender" value="female">
+            </div>
+            <div class="radio-unknown">
+                <label for="unknown">Prefer not to say</label>
+                <input type="radio" id="unknown" class="radio" name="gender" value="unknown">
+            </div>
+        </div>
+    </div>
     
     <section class="data-output">
 
