@@ -2,10 +2,6 @@
 
 /* General*/
 
-body {
-    background-color: white;
-}
-
 
 /* Heading */
 
@@ -21,4 +17,16 @@ body {
     width: auto;
     margin: auto;
     display: block;
+}
+
+
+/*Body*/
+
+.data-input {
+    background-color: #E1E2DF;
+    box-sizing: border-box;
+    border-radius: 100%;
+    width: 70%;
+    height: 40vh;
+    margin: 5vh auto;
 }
