@@ -9,16 +9,19 @@
 h1 {
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
+    margin: 1rem 2rem;
 }
 
 h2 {
     font-family: 'Lato', sans-serif;
     letter-spacing: 3px;
+    margin: 1rem 1.5rem;
 }
 
 h3 {
     font-family: 'Lato', sans-serif;
     letter-spacing: 2px;
+    margin: 0.5rem 2.5rem;
 }
 
 h4 {
@@ -60,28 +63,53 @@ h4 {
 }
 
 .input-group {
-    width: 70%;
+    width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0.5rem 1.2rem;
+    padding: 0.5rem 0.5rem;
     margin: auto;
-}
-
-.input-group > div{
-    flex: 100%;
 }
 
 .img-buttons {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding: 0.5rem 1.2rem;
-    margin: auto;
+    justify-content: center;
+    padding: 0;
+    margin: auto 3rem;
 }
 
 .input-age, 
 .gender,
-.radio-marital {
+.marital-status,
+.radio-health {
     text-align: center;
+    width: 100%;
 }
+
+.btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: black;
+    margin: 0.8rem;
+    border-radius: 5px;
+    padding: 0;
+}
+
+.input-box {
+    margin: 0.8rem;
+    width: 10rem;
+    height: 1rem;
+    padding: 0;
+    border-radius: 5px;
+ }
+
+ #age {
+    width: 3rem;
+    height: 2.25rem;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0 0.5rem;
+    text-align: center;
+    border-radius: 5px;
+ }

@@ -24,32 +24,27 @@
             <div class="input-group">
                 <div class="input-age">
                     <h4>Age</h4>
-                    <input id="age" type="number">
+                    <input id="age" class="input-box" type="number">
                 </div>
                 <div class="gender">
                     <h4>Gender</h4>
                     <div class="img-buttons">
-                        <button data-type="male" class="">
-                            <i class="fas fa-male"></i>
+                        <button data-type="male" class="btn">
+                            <i class="fas fa-male fa-lg"></i>
                         </button>
-                        <button data-type="female" class="">
-                            <i class="fas fa-female"></i>
+                        <button data-type="female" class="btn">
+                            <i class="fas fa-female fa-lg"></i>
                         </button>
                     </div>
                 </div>
-            </div>
-            <div class="input-group">
-                <div class="radio-marital">
+                <div class="marital-status">
                     <h4>Marital Status</h4>
-                    <div class="radio-buttons">
-                        <div class="radio-married">
-                            <label for="married">Married</label>
-                            <input type="radio" id="married" class="radio" name="marital_status" value="married" required>
-                        </div>
-                        <div class="radio-unmarried">
-                            <label for="unmarried">Not Married</label>
-                            <input type="radio" id="unmarried" class="radio" name="marital_status" value="unmarried">
-                        </div>
+                    <div class="marital-status">
+                        <select id="size" class="input-box" name="marital_status" required>
+                            <option value="" disabled selected hidden>Select a status</option>
+                            <option value="married">Married</option>
+                            <option value="not-married">Not Married</option>
+                        </select>
                     </div>
                 </div>
                 <div class="radio-health">
