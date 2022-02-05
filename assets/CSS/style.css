@@ -57,18 +57,18 @@ h4 {
     border-color: #1F497D;
     border-style: solid;
     width: 70%;
-    height: 40vh;
+    height: 600px;
     margin: 5vh auto;
     padding: 5px;
 }
 
 .input-group {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0.5rem 0.5rem;
     margin: auto;
+    align-items: center;
 }
 
 .img-buttons {
@@ -112,3 +112,8 @@ h4 {
     width: 3rem;
     height: 2.25rem;
  }
+
+ .radio {
+    margin-top: -1px;
+    vertical-align: middle;
+  }
