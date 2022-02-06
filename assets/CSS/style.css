@@ -79,10 +79,8 @@ h4 {
     margin: auto 3rem;
 }
 
-.input-age, 
-.gender,
-.marital-status,
-.radio-health {
+.input-item,
+.submit-button {
     text-align: center;
     width: 100%;
 }
@@ -116,4 +114,15 @@ h4 {
  .radio {
     margin-top: -1px;
     vertical-align: middle;
+  }
+
+  .submit-button {
+      width: 75%;
+      height: 50px;
+      margin: 20px auto;
+      display: block;
+      border-radius: 5px;
+      border-width: 1px;
+      font-weight: bold;
+      font-size: larger;
   }

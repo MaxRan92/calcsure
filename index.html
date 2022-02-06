@@ -22,11 +22,11 @@
         <div class="personal-data">
             <h3>Personal Information</h3>
             <div class="input-group">
-                <div class="input-age">
+                <div class="input-age input-item">
                     <h4>Age</h4>
                     <input id="age" class="input-box" type="number" min="0" max="100" step="1" oninput="this.value = Math.abs(this.value)">
                 </div>
-                <div class="gender">
+                <div class="gender input-item">
                     <h4>Gender</h4>
                     <div class="img-buttons">
                         <button data-type="male" class="btn">
@@ -37,7 +37,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="marital-status">
+                <div class="marital-status input-item">
                     <h4>Marital Status</h4>
                     <div class="marital-status">
                         <select id="size" class="input-box" name="marital_status" required>
@@ -47,7 +47,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="radio-health">
+                <div class="radio-health input-item">
                     <h4>Health Conditions</h4>
                     <div class="radio good-health">
                         <label for="good-health radio">Good</label>
@@ -66,24 +66,31 @@
         </div>
         <div class="insurance-data">
             <h3>Customize your insurance plan</h3>
-            <div class="input-coverage">
-                <h4>Select the coverage amount</h4>
-                <input type="range" id="coverage" name="coverage" min="10000" max="1000000" step="10000">
-                <p>EUR <span id="coverage-value"></span></p>
-            </div>
-            <div class="radio-premium-profile">
-                <h4>Premium Profile</h4>
-                <div class="radio-increasing">
-                    <label for="increasing">Increasing</label>
-                    <input type="radio" id="increasing" class="radio" name="premium_profile" value="increasing" required>
+            <div class="input-group">
+                <div class="input-coverage input-item">
+                    <h4>Select the coverage amount</h4>
+                    <input type="range" id="coverage" name="coverage" min="10000" max="1000000" step="10000">
+                    <p><span id="coverage-value"></span> EUR</p>
                 </div>
-                <div class="radio-constant">
-                    <label for="constant">Constant</label>
-                    <input type="radio" id="constant" class="radio" name="premium_profile" value="constant">
+                <div class="input-term input-item">
+                    <h4>Select the coverage term</h4>
+                    <input type="range" id="term" name="term" min="5" max="50" step="1">
+                    <p><span id="coverage-term"></span> Years</p>
                 </div>
-                <div class="radio-decreasing">
-                    <label for="decreasing">Decreasing</label>
-                    <input type="radio" id="decreasing" class="radio" name="premium_profile" value="decreasing" required>
+                <div class="radio-premium-profile input-item">
+                    <h4>Premium Profile</h4>
+                    <div class="radio-increasing">
+                        <label for="increasing">Increasing</label>
+                        <input type="radio" id="increasing" class="radio" name="premium_profile" value="increasing" required>
+                    </div>
+                    <div class="radio-constant">
+                        <label for="constant">Constant</label>
+                        <input type="radio" id="constant" class="radio" name="premium_profile" value="constant">
+                    </div>
+                    <div class="radio-decreasing">
+                        <label for="decreasing">Decreasing</label>
+                        <input type="radio" id="decreasing" class="radio" name="premium_profile" value="decreasing" required>
+                    </div>
                 </div>
             </div>
         </div>
