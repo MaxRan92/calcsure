@@ -24,7 +24,7 @@
             <div class="input-group">
                 <div class="input-age">
                     <h4>Age</h4>
-                    <input id="age" class="input-box" type="number">
+                    <input id="age" class="input-box" type="number" min="0" max="100" step="1" oninput="this.value = Math.abs(this.value)">
                 </div>
                 <div class="gender">
                     <h4>Gender</h4>
@@ -49,15 +49,15 @@
                 </div>
                 <div class="radio-health">
                     <h4>Health Conditions</h4>
-                    <div class="radio-good-health">
-                        <label for="good-health">Good</label>
+                    <div class="radio good-health">
+                        <label for="good-health radio">Good</label>
                         <input type="radio" id="good-health" class="radio-input" name="health_condition" value="good-health" required>
                     </div>
-                    <div class="radio-medium-health">
+                    <div class="radio medium-health">
                         <label for="medium-health">Medium</label>
                         <input type="radio" id="medium-health" class="radio-input" name="health_condition" value="medium-health" required>
                     </div>
-                    <div class="radio-poor-health">
+                    <div class="radio poor-health">
                         <label for="poor-health">Poor</label>
                         <input type="radio" id="poor-health" class="radio-input" name="health_condition" value="poor-health" required>
                     </div>
@@ -67,7 +67,7 @@
         <div class="insurance-data">
             <h3>Customize your insurance plan</h3>
             <div class="input-coverage">
-                <h4>Select the maturity</h4>
+                <h4>Select the coverage amount</h4>
                 <input type="range" id="coverage" name="coverage" min="10000" max="1000000" step="10000">
                 <p>EUR <span id="coverage-value"></span></p>
             </div>

@@ -106,3 +106,14 @@ Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` f
 ---
 
 Happy coding!
+
+
+## Deployment
+
+- The site is deployed on GitHub at the followin [link](https://maxran92.github.io/the-meatseed-fund/index.html)
+- The deployment process is the following
+  1. In the GitHub [repository](https://github.com/MaxRan92/the-meatseed-fund), navigate to the **Settings** tab
+  2. Select **Pages** from the left hand navigation tab, then select **Source** > **Branch: main**
+  3. Once the main branch has been selected and the **Save** button is clicked, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.   
+
+The live link can be found [here](https://maxran92.github.io/the-meatseed-fund/index.html)
