@@ -27,25 +27,53 @@ document.addEventListener("DOMContentLoaded", function() {
   submit.addEventListener("click", calculatePremium);
    
   let buttons = document.getElementsByTagName("button");
-  let gender = [];
+
 
   for (let button of buttons){
       button.addEventListener("click", function() {
           if (this.getAttribute("data-type") === "male") {
-              gender = this.value;
+              gender = "male";
           }  else  {
-              gender = this.value;
+              gender = "female";
           }    
       })
   }
-  console.log(gender);
 })
 
+function healthConditions () {
+  if(document.getElementById('good-health').checked) {
+    health = document.getElementById('good-health').value;
+  }else if(document.getElementById('medium-health').checked) {
+    health = document.getElementById('medium-health').value;
+  }else if(document.getElementById('poor-health').checked) {
+    health = document.getElementById('poor-health').value;
+  }
+}
+
+function premiumProfile() {
+  if(document.getElementById('increasing').checked) {
+    premiumStyle = document.getElementById('increasing').value;
+  }else if(document.getElementById('constant').checked) {
+    premiumStyle = document.getElementById('constant').value;
+  }else if(document.getElementById('decreasing').checked) {
+    premiumStyle = document.getElementById('decreasing').value;
+  }
+}
 
 function calculatePremium() {
+  premiumProfile();
+  healthConditions();
   let age = document.getElementById("age").value;
+  let maritalStatus = document.getElementById("marital-status").value;
+  let coverage = sliderAmount.value;
+  let term = document.getElementById("term").value;
   console.log(age);
   console.log(gender);
+  console.log(maritalStatus);
+  console.log(health);
+  console.log(coverage);
+  console.log(term);
+  console.log(premiumStyle);
 }
 
 
