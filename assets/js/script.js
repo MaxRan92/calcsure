@@ -141,7 +141,7 @@ function checkInputs(){
 
   // validate age
   age = ageInput.value;
-  if (parseInt(age)) && age !== "" && (parseInt(age) >= 0 && parseInt(age) <= 100)) {
+  if (parseInt(age) && age !== "" && (parseInt(age) >= 0 && parseInt(age) <= 100)) {
     // all good
     errors.age = "";
   } else {
@@ -167,7 +167,7 @@ function checkInputs(){
   }
 
   // validate health_status
-  health = document.querySelector('înput[name="health"]:checked');
+  health = document.querySelector('input[name="health"]:checked');
   if (health) {
     health = health.value;
     errors.health = "";
@@ -194,5 +194,4 @@ function checkInputs(){
   } else {
     console.log(errors);
   }
-
 }
