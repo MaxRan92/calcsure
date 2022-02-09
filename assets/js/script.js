@@ -2,6 +2,7 @@
  * DOM elements of interest for calculations
  */
 const ageInput = document.getElementById('age');
+const femaleButton = document.querySelector(.btn.gender.female);
 const maritalStatusDropDown = document.getElementById('marital-status');
 const dataOutput = document.querySelector('.data-output');
 
