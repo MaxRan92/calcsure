@@ -192,7 +192,10 @@ function checkInputs(){
   if (showResults) {
     // do the calculation
     calculatePremium();
+    dataOutput.classList.remove('hide');
+    dataOutput.scrollIntoView();
   } else {
+    dataOutput.classList.add('hide');
     console.log(errors);
   }
 }
