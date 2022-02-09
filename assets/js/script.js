@@ -18,7 +18,6 @@ sliderTerm.oninput = function() {
   outputTerm.innerHTML = this.value;
 }
 
-
 // Wait for the DOM to finish loading before running the calculation
 // Add event listener to the submit button
 document.addEventListener("DOMContentLoaded", function() {
@@ -28,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
    
   let buttons = document.getElementsByTagName("button");
 
-
+  
   for (let button of buttons){
       button.addEventListener("click", function() {
           if (this.getAttribute("data-type") === "male") {
@@ -60,20 +59,45 @@ function premiumProfile() {
   }
 }
 
+function factors() {
+  if (gender == "male") {
+    genderFactor = 1.1;
+  } else {
+    genderFactor = 0.9;
+  }
+  let maritalStatus = document.getElementById("marital-status").value;
+  if (maritalStatus == "married") {
+    maritalFactor = 0.95;
+  } else {
+    maritalFactor = 1.05;
+  }
+
+  if (health == "good") {
+    healthFactor = 0.7;
+  } else if (health == "medium") {
+    healthFactor = 1;
+  } else {
+    healthFactor = 1.3;
+  }
+}
+
 function calculatePremium() {
   premiumProfile();
   healthConditions();
   let age = document.getElementById("age").value;
-  let maritalStatus = document.getElementById("marital-status").value;
   let coverage = sliderAmount.value;
   let term = document.getElementById("term").value;
-  console.log(age);
-  console.log(gender);
-  console.log(maritalStatus);
-  console.log(health);
-  console.log(coverage);
-  console.log(term);
-  console.log(premiumStyle);
-}
+  let finalAge = parseFloat(age) + parseFloat(term);
+  factors();
+  let constant1 = 3 * genderFactor * maritalFactor * healthFactor;
+  let constant2 = 3.5;
 
+  // Weibull formula on final age
+  let pSurvival = 2.718282**(-constant1*(finalAge/100)**(constant2));
+  
+  let expectedValueCoverage = coverage * (1-pSurvival);
+
+  console.log(pSurvival);
+  console.log(expectedValueCoverage);
+}
 
