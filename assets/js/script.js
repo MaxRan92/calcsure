@@ -13,6 +13,15 @@ const dataOutput = document.querySelector('.data-output');
 const submitButton = document.getElementById("submit-button");
 
 
+/**
+ * Factors for calculation
+ */
+let factors = {
+  genderFactor: 0,
+  maritalFactor: 0,
+  healthFactor: 0,
+}
+
 /** initial errors for page */
 let errors = {
   age: "",
@@ -83,25 +92,23 @@ function premiumProfile() {
   }
 }
 
-function factors() {
+function setFactors() {
   if (gender == "male") {
-    genderFactor = 1.1;
+    factors.genderFactor = 1.1;
   } else {
-    genderFactor = 0.9;
+    factors.genderFactor = 0.9;
   }
-  let maritalStatus = document.getElementById("marital-status").value;
-  if (maritalStatus == "married") {
-    maritalFactor = 0.95;
+  if (marital_status == "married") {
+    factors.maritalFactor = 0.95;
   } else {
-    maritalFactor = 1.05;
+    factors.maritalFactor = 1.05;
   }
-
   if (health == "good") {
-    healthFactor = 0.7;
+    factors.healthFactor = 0.7;
   } else if (health == "medium") {
-    healthFactor = 1;
+    factors.healthFactor = 1;
   } else {
-    healthFactor = 1.3;
+    factors.healthFactor = 1.3;
   }
 }
 
