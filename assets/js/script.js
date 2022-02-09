@@ -7,7 +7,10 @@ const maleButton = document.querySelector('.btn.gender.male');
 const maritalStatusDropDown = document.getElementById('marital-status');
 const coverageAmount = document.getElementById("coverage");
 const outputCoverageAmount = document.getElementById("coverage-value");
+const termAmount = document.getElementById("term");
+const outputTermAmount = document.getElementById("coverage-term");
 const dataOutput = document.querySelector('.data-output');
+const submitButton = document.getElementById("submit-button");
 
 
 /** initial errors for page */
