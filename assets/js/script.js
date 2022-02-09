@@ -1,3 +1,19 @@
+/**
+ * DOM elements of interest for calculations
+ */
+const ageInput = document.getElementById('age');
+const maritalStatusDropDown = document.getElementById('marital-status');
+
+
+/** initial errors for page */
+let errors = {
+  age: "",
+  gender: "",
+  marital_status: "",
+  health: "",
+  premium_profile: "",
+};
+
 
 /*code inspired by https://www.w3schools.com/howto/howto_js_rangeslider.asp */
 var sliderAmount = document.getElementById("coverage");
@@ -101,3 +117,82 @@ function calculatePremium() {
   console.log(expectedValueCoverage);
 }
 
+function checkInputs(){
+  /**
+     *  check inputs that are required are valid  or not
+     *  This is triggered by the submit button on the form
+     *
+     * 1. check age between 0 and 100
+     * 2. check gender is selected
+     * 3. check marital status selected
+     * 4. check health condition selected
+     * 5. check premium profile selected
+     */
+
+  // Reset errors to blank
+  errors = {
+    age: "",
+    gender: "",
+    marital_status: "",
+    health: "",
+    premium_profile: "",
+  };
+  let has_errors = false;
+
+  // validate age
+  age = ageInput.value;
+  if (parseInt(age)) && age !== "" && (parseInt(age) >= 0 && parseInt(age) <= 100)) {
+    // all good
+    errors.age = "";
+  } else {
+    has_errors = true;
+    errors.age = "Please enter a number between 0 and 100";
+  }
+  
+  // validate gender
+  if (gender === "") {
+    errors.gender = "Please select a gender";
+    has_errors = true;
+  } else {
+    errors.gender = "";
+  }
+
+  //validate marital status
+  marital_status = maritalStatusDropDown.value;
+  if (marital_status !== "") {
+    errors.marital_status = "";
+  } else {
+    errors.marital_status = "Please select a marital status";
+    has_errors = true;
+  }
+
+  // validate health_status
+  health = document.querySelector('înput[name="health"]:checked');
+  if (health) {
+    health = health.value;
+    errors.health = "";
+  } else {
+    errors.health = "Please select a health status";
+    has_errors = true;
+  }
+
+  // premium profile
+  premium_profile = document.querySelector('input[name="premium-profile"]:checked');
+  if (premium_profile) {
+    premium_profile = premium_profile.value;
+    errors.premium_profile = "";
+  } else {
+    errors.premium_profile = "Please select a Premium Profile option";
+    has_errors = true;
+  }
+
+  showResults = !has_errors;
+
+  if (showResults) {
+    // do the calculation
+    calculatePremium();
+  } else {
+    console.log(errors);
+  }
+
+}
