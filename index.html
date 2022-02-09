@@ -17,86 +17,87 @@
         Find the best insurance plan for you!
     </h1>
 
-    <div class="data-input">
-        <h2>Insert your data</h2>
-        <div class="personal-data">
-            <h3>Personal Information</h3>
-            <div class="input-group">
-                <div class="input-age input-item">
-                    <h4>Age</h4>
-                    <input id="age" class="input-box" type="number" min="0" max="100" step="1" oninput="this.value = Math.abs(this.value)">
-                </div>
-                <div class="gender input-item">
-                    <h4>Gender</h4>
-                    <div class="img-buttons">
-                        <button data-type="male" class="btn" value="male">
-                            <i class="fas fa-male fa-lg"></i>
-                        </button>
-                        <button data-type="female" class="btn" value="female">
-                            <i class="fas fa-female fa-lg"></i>
-                        </button>
+    <form method="POST" action="javascript:checkInputs()" target="_blank" class="input-form">
+        <div class="data-input">
+            <h2>Insert your data</h2>
+            <div class="personal-data">
+                <h3>Personal Information</h3>
+                <div class="input-group">
+                    <div class="input-age input-item">
+                        <h4>Age</h4>
+                        <input id="age" class="input-box" type="number" min="0" max="100" step="1" oninput="this.value = Math.abs(this.value)">
                     </div>
-                </div>
-                <div class="marital-status input-item">
-                    <h4>Marital Status</h4>
-                    <div class="marital-status">
-                        <select id="marital-status" class="input-box" name="marital_status" required>
-                            <option value="" disabled selected hidden>Select a status</option>
-                            <option value="married">Married</option>
-                            <option value="not-married">Not Married</option>
-                        </select>
+                    <div class="gender input-item">
+                        <h4>Gender</h4>
+                        <div class="img-buttons">
+                            <button data-type="male" class="btn" value="male">
+                                <i class="fas fa-male fa-lg"></i>
+                            </button>
+                            <button data-type="female" class="btn" value="female">
+                                <i class="fas fa-female fa-lg"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div id ="health" class="radio-health input-item">
-                    <h4>Health Conditions</h4>
-                    <div class="radio good-health">
-                        <label for="good-health">Good</label>
-                        <input type="radio" id="good-health" class="radio-input" name="health" value="good">
+                    <div class="marital-status input-item">
+                        <h4>Marital Status</h4>
+                        <div class="marital-status">
+                            <select id="marital-status" class="input-box" name="marital_status" required>
+                                <option value="" disabled selected hidden>Select a status</option>
+                                <option value="married">Married</option>
+                                <option value="not-married">Not Married</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="radio medium-health">
-                        <label for="medium-health">Medium</label>
-                        <input type="radio" id="medium-health" class="radio-input" name="health" value="medium">
-                    </div>
-                    <div class="radio poor-health">
-                        <label for="poor-health">Poor</label>
-                        <input type="radio" id="poor-health" class="radio-input" name="health" value="poor">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="insurance-data">
-            <h3>Customize your insurance plan</h3>
-            <div class="input-group">
-                <div class="input-coverage input-item">
-                    <h4>Select the coverage amount</h4>
-                    <input type="range" id="coverage" name="coverage" min="10000" max="1000000" step="10000">
-                    <p><span id="coverage-value"></span> EUR</p>
-                </div>
-                <div class="input-term input-item">
-                    <h4>Select the coverage term</h4>
-                    <input type="range" id="term" name="term" min="5" max="50" step="1">
-                    <p><span id="coverage-term"></span> Years</p>
-                </div>
-                <div class="radio-premium-profile input-item">
-                    <h4>Premium Profile</h4>
-                    <div class="radio-increasing">
-                        <label for="increasing">Increasing</label>
-                        <input type="radio" id="increasing" class="radio" name="premium_profile" value="increasing" required>
-                    </div>
-                    <div class="radio-constant">
-                        <label for="constant">Constant</label>
-                        <input type="radio" id="constant" class="radio" name="premium_profile" value="constant">
-                    </div>
-                    <div class="radio-decreasing">
-                        <label for="decreasing">Decreasing</label>
-                        <input type="radio" id="decreasing" class="radio" name="premium_profile" value="decreasing" required>
+                    <div id ="health" class="radio-health input-item">
+                        <h4>Health Conditions</h4>
+                        <div class="radio good-health">
+                            <label for="good-health">Good</label>
+                            <input type="radio" id="good-health" class="radio-input" name="health" value="good">
+                        </div>
+                        <div class="radio medium-health">
+                            <label for="medium-health">Medium</label>
+                            <input type="radio" id="medium-health" class="radio-input" name="health" value="medium">
+                        </div>
+                        <div class="radio poor-health">
+                            <label for="poor-health">Poor</label>
+                            <input type="radio" id="poor-health" class="radio-input" name="health" value="poor">
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="insurance-data">
+                <h3>Customize your insurance plan</h3>
+                <div class="input-group">
+                    <div class="input-coverage input-item">
+                        <h4>Select the coverage amount</h4>
+                        <input type="range" id="coverage" name="coverage" min="10000" max="1000000" step="10000">
+                        <p><span id="coverage-value"></span> EUR</p>
+                    </div>
+                    <div class="input-term input-item">
+                        <h4>Select the coverage term</h4>
+                        <input type="range" id="term" name="term" min="5" max="50" step="1">
+                        <p><span id="coverage-term"></span> Years</p>
+                    </div>
+                    <div class="radio-premium-profile input-item">
+                        <h4>Premium Profile</h4>
+                        <div class="radio-increasing">
+                            <label for="increasing">Increasing</label>
+                            <input type="radio" id="increasing" class="radio" name="premium_profile" value="increasing" required>
+                        </div>
+                        <div class="radio-constant">
+                            <label for="constant">Constant</label>
+                            <input type="radio" id="constant" class="radio" name="premium_profile" value="constant">
+                        </div>
+                        <div class="radio-decreasing">
+                            <label for="decreasing">Decreasing</label>
+                            <input type="radio" id="decreasing" class="radio" name="premium_profile" value="decreasing" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="Calculate your plan" id="submit-button" class="submit-button">
         </div>
-        <input type="submit" value="Calculate your plan" id="submit-button" class="submit-button">
-    </div>
-    
+    </form>
     <section class="data-output">
 
     </section>
