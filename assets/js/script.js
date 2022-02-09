@@ -2,8 +2,11 @@
  * DOM elements of interest for calculations
  */
 const ageInput = document.getElementById('age');
-const femaleButton = document.querySelector(.btn.gender.female);
+const femaleButton = document.querySelector('.btn.gender.female');
+const maleButton = document.querySelector('.btn.gender.male');
 const maritalStatusDropDown = document.getElementById('marital-status');
+const coverageAmount = document.getElementById("coverage");
+const outputCoverageAmount = document.getElementById("coverage-value");
 const dataOutput = document.querySelector('.data-output');
 
 
