@@ -126,3 +126,7 @@ h4 {
       font-weight: bold;
       font-size: larger;
   }
+
+  .hide {
+      display: none;
+  }

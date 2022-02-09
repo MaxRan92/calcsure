@@ -3,6 +3,7 @@
  */
 const ageInput = document.getElementById('age');
 const maritalStatusDropDown = document.getElementById('marital-status');
+const dataOutput = document.querySelector('.data-output');
 
 
 /** initial errors for page */
