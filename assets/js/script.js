@@ -40,6 +40,15 @@ let gender = "";
 let marital_status = "";
 let health = "";
 let premium_profile = "";
+let term = "";
+
+/**
+ * Variables for premium Schedule
+ */
+let expectedValueCoverage = "";
+let premium = "";
+let premiumSchedule = [];
+
 
 
 /**
@@ -115,7 +124,7 @@ function setFactors() {
 
 function calculatePremium() {
   const coverage = coverageAmount.value;
-  const term = termAmount.value;
+  term = termAmount.value;
   const finalAge = parseFloat(age) + parseFloat(term);
   setFactors();
   const constant1 = 3 * factors.genderFactor * factors.maritalFactor * factors.healthFactor;
@@ -123,11 +132,20 @@ function calculatePremium() {
   
   // Weibull formula on final age
   const pSurvival = 2.718282 ** (-constant1 * (finalAge / 100) ** (constant2));
-    const expectedValueCoverage = coverage * (1-pSurvival);
-
-  console.log(pSurvival);
-  console.log(expectedValueCoverage);
+  expectedValueCoverage = coverage * (1-pSurvival);
 }
+
+function premiumPlan() {
+  const d = new Date();
+  let currentYear = d.getFullYear();
+  for (let i = 0; i < parseFloat(term); i++) {
+    premium = expectedValueCoverage / term;
+    premiumSchedule.push({'date': currentYear, 'premium': premium})
+    currentYear = parseFloat(currentYear) + 1;
+  }
+  console.log(premiumSchedule);
+}
+
 
 function checkInputs(){
   /**
@@ -203,6 +221,7 @@ function checkInputs(){
   if (showResults) {
     // do the calculation
     calculatePremium();
+    premiumPlan();
     dataOutput.classList.remove('hide');
     dataOutput.scrollIntoView();
   } else {
