@@ -119,7 +119,7 @@ function calculatePremium() {
   let coverage = sliderAmount.value;
   let term = document.getElementById("term").value;
   let finalAge = parseFloat(age) + parseFloat(term);
-  factors();
+  setFactors();
   let constant1 = 3 * genderFactor * maritalFactor * healthFactor;
   let constant2 = 3.5;
 
