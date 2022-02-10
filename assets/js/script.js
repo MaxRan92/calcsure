@@ -114,20 +114,16 @@ function setFactors() {
 }
 
 function calculatePremium() {
-  console.log(coverageAmount);
-  healthConditions();
-  let age = document.getElementById("age").value;
-  let coverage = sliderAmount.value;
-  let term = document.getElementById("term").value;
-  let finalAge = parseFloat(age) + parseFloat(term);
+  const coverage = coverageAmount.value;
+  const term = termAmount.value;
+  const finalAge = parseFloat(age) + parseFloat(term);
   setFactors();
-  let constant1 = 3 * genderFactor * maritalFactor * healthFactor;
-  let constant2 = 3.5;
-
-  // Weibull formula on final age
-  let pSurvival = 2.718282**(-constant1*(finalAge/100)**(constant2));
+  const constant1 = 3 * factors.genderFactor * factors.maritalFactor * factors.healthFactor;
+  const constant2 = 3.5;
   
-  let expectedValueCoverage = coverage * (1-pSurvival);
+  // Weibull formula on final age
+  const pSurvival = 2.718282 ** (-constant1 * (finalAge / 100) ** (constant2));
+    const expectedValueCoverage = coverage * (1-pSurvival);
 
   console.log(pSurvival);
   console.log(expectedValueCoverage);
