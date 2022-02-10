@@ -43,7 +43,7 @@ let premium_profile = "";
 
 
 /**
- * Range slider changes
+ * Range slider updates
  * code inspired by https://www.w3schools.com/howto/howto_js_rangeslider.asp 
  */
 
@@ -61,45 +61,37 @@ termAmount.oninput = function() {
 
 
 // Wait for the DOM to finish loading before running the calculation
-// Add event listener to the submit button
+// Add event listener to the gender and submit button
 document.addEventListener("DOMContentLoaded", function() {
-  let submit = document.getElementById("submit-button");
   
-  submit.addEventListener("click", calculatePremium);
-   
-  let buttons = document.getElementsByTagName("button");
+  //female button
+  femaleButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    gender = "female";
+    femaleButton.classList.add("selected");
+    if (maleButton.classList.contains('selected')) {
+      maleButton.classList.remove("selected");
+    }
+  });
 
-  
-  for (let button of buttons){
-      button.addEventListener("click", function() {
-          if (this.getAttribute("data-type") === "male") {
-              gender = "male";
-          }  else  {
-              gender = "female";
-          }    
-      })
-  }
-})
 
-function healthConditions () {
-  if(document.getElementById('good-health').checked) {
-    health = document.getElementById('good-health').value;
-  }else if(document.getElementById('medium-health').checked) {
-    health = document.getElementById('medium-health').value;
-  }else if(document.getElementById('poor-health').checked) {
-    health = document.getElementById('poor-health').value;
-  }
-}
+  //male button
+  maleButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    gender = "male";
+    maleButton.classList.add("selected");
+    if (femaleButton.classList.contains("selected")) {
+      femaleButton.classList.remove("selected");
+    }
+  });
 
-function premiumProfile() {
-  if(document.getElementById('increasing').checked) {
-    premiumStyle = document.getElementById('increasing').value;
-  }else if(document.getElementById('constant').checked) {
-    premiumStyle = document.getElementById('constant').value;
-  }else if(document.getElementById('decreasing').checked) {
-    premiumStyle = document.getElementById('decreasing').value;
-  }
-}
+  //submit button
+  submitButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    checkInputs();
+  })
+});
+
 
 function setFactors() {
   if (gender == "male") {
@@ -123,7 +115,6 @@ function setFactors() {
 
 function calculatePremium() {
   console.log(coverageAmount);
-  premiumProfile();
   healthConditions();
   let age = document.getElementById("age").value;
   let coverage = sliderAmount.value;
