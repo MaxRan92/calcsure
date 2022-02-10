@@ -31,25 +31,34 @@ let errors = {
   premium_profile: "",
 };
 
+/**
+ * Variables based on user input
+ */
 
-/*code inspired by https://www.w3schools.com/howto/howto_js_rangeslider.asp */
-var sliderAmount = document.getElementById("coverage");
-var outputAmount = document.getElementById("coverage-value");
-outputAmount.innerHTML = sliderAmount.value; // Display the default slider value
+let age = "";
+let gender = "";
+let marital_status = "";
+let health = "";
+let premium_profile = "";
 
+
+/**
+ * Range slider changes
+ * code inspired by https://www.w3schools.com/howto/howto_js_rangeslider.asp 
+ */
+
+outputCoverageAmount.innerHTML = coverageAmount.value; //display the default slider value
 // Update the current slider value (each time you drag the slider handle)
-sliderAmount.oninput = function() {
-  outputAmount.innerHTML = this.value;
+coverageAmount.oninput = function() {
+  outputCoverageAmount.innerHTML = this.value;
 }
 
-var sliderTerm = document.getElementById("term");
-var outputTerm = document.getElementById("coverage-term");
-outputTerm.innerHTML = sliderTerm.value; // Display the default slider value
-
+outputTermAmount.innerHTML = termAmount.value; //display the default slider value
 // Update the current slider value (each time you drag the slider handle)
-sliderTerm.oninput = function() {
-  outputTerm.innerHTML = this.value;
+termAmount.oninput = function() {
+  outputTermAmount.innerHTML = this.value;
 }
+
 
 // Wait for the DOM to finish loading before running the calculation
 // Add event listener to the submit button
@@ -113,6 +122,7 @@ function setFactors() {
 }
 
 function calculatePremium() {
+  console.log(coverageAmount);
   premiumProfile();
   healthConditions();
   let age = document.getElementById("age").value;
