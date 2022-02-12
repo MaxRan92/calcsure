@@ -57,9 +57,9 @@ h4 {
     border-color: #1F497D;
     border-style: solid;
     width: 70%;
-    height: 600px;
+    height: auto;
     margin: 5vh auto;
-    padding: 5px;
+    padding: 15px;
 }
 
 .input-group {
@@ -157,18 +157,18 @@ h4 {
 
   #collapser {
       background-color: #1F497D;
-      height: 50px;
+      height: 25px;
       width: 80%;
       margin: auto;
   }
 
   #collapser > h2 {
     color: #E1E2DF;
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
     text-transform: uppercase;
     margin: auto;
-    line-height: 50px;
+    line-height: 25px;
   }
 
   .result-summary {
