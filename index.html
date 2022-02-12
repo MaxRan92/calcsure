@@ -71,7 +71,7 @@
                     <div class="input-coverage input-item">
                         <h4>Select the coverage amount</h4>
                         <input type="range" id="coverage" name="coverage" min="10000" max="1000000" step="10000">
-                        <p><span id="coverage-value"></span> EUR</p>
+                        <p><span id="coverage-value"></span> USD</p>
                     </div>
                     <div class="input-term input-item">
                         <h4>Select the coverage term</h4>
@@ -100,11 +100,14 @@
     </form>
     <section class="data-output hide">
         <h1>YOUR RESULTS</h1>
-        <table id="premium-table">
+        <div id="collapser">
+            <h2>Show Payment Details</h2>
+        </div>
+        <table id="premium-table" class="collapsible hide">
             <thead>
                 <tr>
-                    <th>Date</th>
-                    <th>Yearly Premium</th>
+                    <th>DATE</th>
+                    <th>PREMIUM</th>
                 </tr>
             </thead>
             <tbody id="table-body">

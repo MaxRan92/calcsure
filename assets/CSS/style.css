@@ -154,3 +154,19 @@ h4 {
     padding: 3px;
     text-align: center;
   }
+
+  #collapser {
+      background-color: #1F497D;
+      height: 50px;
+      width: 80%;
+      margin: auto;
+  }
+
+  #collapser > h2 {
+    color: #E1E2DF;
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: auto;
+    line-height: 50px;
+  }

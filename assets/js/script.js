@@ -13,6 +13,7 @@ const dataOutput = document.querySelector('.data-output');
 const submitButton = document.getElementById("submit-button");
 const premiumTable = document.getElementById('premium-table');
 const premiumTableBody = document.getElementById('table-body');
+const collButton = document.getElementById("collapser");
 
 
 /**
@@ -104,7 +105,17 @@ document.addEventListener("DOMContentLoaded", function() {
   submitButton.addEventListener('click', function(e) {
     e.preventDefault();
     checkInputs();
-  })
+  });
+
+  // collapse button
+  collButton.addEventListener('click', function() {
+    if (premiumTable.classList.contains('hide')) {
+      premiumTable.classList.remove('hide');
+    } else {
+      premiumTable.classList.add('hide');
+    }
+  });
+  
 });
 
 
@@ -160,9 +171,10 @@ function premiumPlan() {
     row = premiumTableBody.insertRow();
     cell1 = row.insertCell(0);
     cell2 = row.insertCell(1);
-
     cell1.innerHTML = premiumDate.toLocaleDateString();
     cell2.innerHTML = premium.toLocaleString("en-US", {style:"currency", currency:"USD"});
+
+    // row.classList.add('collapsible');
 
     totalPremium = totalPremium + premium;
   }
@@ -175,25 +187,6 @@ function premiumPlan() {
   
 
   console.log(premiumSchedule);
-}
-
-
-
-
-
-function buildScheduleHTML(payments) {
-
-  let premiumSchedule = document.getElementById('premium-schedule');
-
-  // empty out exsiting element incase they already did a calculation
-  premiumSchedule.firstChild.remove();
-
-  // loop through payments and make the table body 
-  /// need to either update innerHTML with the new stuff
-  payments.forEach((payment, index) => {
-    premiumSchedule.append(`<tr> <td> ${payment.year} </td><td>${payment.payment}</td></tr>`);
-
-  })
 }
 
 
