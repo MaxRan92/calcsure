@@ -199,8 +199,8 @@ function premiumPlan() {
   row = premiumTableBody.insertRow();
   cell1 = row.insertCell(0);
   cell2 = row.insertCell(1);
-  cell1.innerHTML = "Total";
-  cell2.innerHTML = totalPremium.toLocaleString("en-US", {style:"currency", currency:"USD"});
+  cell1.innerHTML = "<strong>Total</strong>";
+  cell2.innerHTML = "<strong>" + totalPremium.toLocaleString("en-US", {style:"currency", currency:"USD"}) + "</strong>";
   
   averagePremium = totalPremium / term;
 

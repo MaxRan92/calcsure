@@ -100,6 +100,7 @@ h4 {
 .btn {
     width: 2.5rem;
     color: black;
+    background-color: white;
 }
 
 .input-box {
@@ -125,6 +126,13 @@ h4 {
       border-width: 1px;
       font-weight: bold;
       font-size: larger;
+      background-color: #1F497D;
+      color: #E1E2DF;
+  }
+
+  .submit-button:hover {
+      background-color: #FFC31F;
+      color: #1F497D;
   }
 
   .hide {
@@ -133,7 +141,9 @@ h4 {
 
   table, th, td {
     border: 2px solid;
-    width: 80%;
+    width: 75%;
+    border-radius: 5px;
+    border-width: 1px;
     border-collapse: collapse;
     margin: auto;
   }
@@ -156,19 +166,32 @@ h4 {
   }
 
   #collapser {
-      background-color: #1F497D;
-      height: 25px;
-      width: 80%;
-      margin: auto;
+    background-color: #1F497D;
+    height: 50px;
+    width: 75%;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    font-weight: bold;
+    margin: auto;
+    display: block;
   }
 
-  #collapser > h2 {
+  #collapser:hover {
+    background-color: #FFC31F;
+  }
+
+  #collapser:hover,
+  #collapser > p:hover {
+    color: #1F497D;
+  }
+
+  #collapser > p {
     color: #E1E2DF;
-    font-size: 16px;
+    font-size: 19px;
     text-align: center;
-    text-transform: uppercase;
     margin: auto;
-    line-height: 25px;
+    line-height: 50px;
   }
 
   .result-summary {
