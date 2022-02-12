@@ -130,3 +130,27 @@ h4 {
   .hide {
       display: none;
   }
+
+  table, th, td {
+    border: 2px solid;
+    width: 80%;
+    border-collapse: collapse;
+    margin: auto;
+  }
+
+  table {
+      background-color: white;
+      table-layout: fixed;
+  }
+
+  th {
+      height: 70px;
+      color: #1F497D;
+      border-color: black;
+      font-size: larger;
+  }
+
+  th, td {
+    padding: 3px;
+    text-align: center;
+  }
