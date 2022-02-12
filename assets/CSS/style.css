@@ -170,3 +170,8 @@ h4 {
     margin: auto;
     line-height: 50px;
   }
+
+  .result-summary {
+      width: 90%;
+      margin: auto;
+  }

@@ -14,6 +14,7 @@ const submitButton = document.getElementById("submit-button");
 const premiumTable = document.getElementById('premium-table');
 const premiumTableBody = document.getElementById('table-body');
 const collButton = document.getElementById("collapser");
+const profileSpan = document.getElementById("result-profile");
 
 
 /**
@@ -30,6 +31,7 @@ let factors = {
   currentYear: 0,
   premiumDate: 0,
   premiumFactor: 0,
+  averagePremium: 0,
 }
 
 /** initial errors for page */
@@ -148,7 +150,7 @@ function setFactors() {
   }
 }
 
-function calculatePremium() {
+function calculateExpectedValue() {
   const coverage = coverageAmount.value;
   term = termAmount.value;
   const finalAge = parseFloat(age) + parseFloat(term);
@@ -200,6 +202,14 @@ function premiumPlan() {
   cell1.innerHTML = "Total";
   cell2.innerHTML = totalPremium.toLocaleString("en-US", {style:"currency", currency:"USD"});
   
+  averagePremium = totalPremium / term;
+
+}
+
+function planDescription() {
+  profileSpan.innerHTML = "Your premium life insurance plan consists in <strong>" + term + " " + premiumProfile + " payments </strong> for a total of <strong>" 
+  + totalPremium.toLocaleString("en-US", {style:"currency", currency:"USD", maximumFractionDigits: 0}) + "</strong> and an average premium of <strong>" 
+  + averagePremium.toLocaleString("en-US", {style:"currency", currency:"USD", maximumFractionDigits: 0}) + "</strong>.";
 }
 
 
@@ -276,8 +286,9 @@ function checkInputs(){
 
   if (showResults) {
     // do the calculation
-    calculatePremium();
+    calculateExpectedValue();
     premiumPlan();
+    planDescription();
     dataOutput.classList.remove('hide');
     dataOutput.scrollIntoView();
   } else {
