@@ -49,6 +49,7 @@ let term = "";
  */
 let expectedValueCoverage = "";
 let premium = "";
+let totalPremium = "";
 let d = "";
 let currentYear = "";
 let premiumDate = "";
@@ -144,6 +145,7 @@ function premiumPlan() {
   d = new Date();
   currentYear = d.getFullYear();
   premiumDate = new Date(currentYear, 11, 31);
+  totalPremium = 0;
   
   while (premiumTableBody.hasChildNodes()) {  
     premiumTableBody.removeChild(premiumTableBody.firstChild);
@@ -156,12 +158,22 @@ function premiumPlan() {
     currentYear = parseFloat(currentYear) + 1;
 
     row = premiumTableBody.insertRow();
-    cell1 = row.insertCell(0)
-    cell2 = row.insertCell(1)
+    cell1 = row.insertCell(0);
+    cell2 = row.insertCell(1);
 
-    cell1.innerHTML = premiumDate;
-    cell2.innerHTML = premium;
+    cell1.innerHTML = premiumDate.toLocaleDateString();
+    cell2.innerHTML = premium.toLocaleString("en-US", {style:"currency", currency:"USD"});
+
+    totalPremium = totalPremium + premium;
   }
+
+  row = premiumTableBody.insertRow();
+  cell1 = row.insertCell(0);
+  cell2 = row.insertCell(1);
+  cell1.innerHTML = "Total";
+  cell2.innerHTML = totalPremium.toLocaleString("en-US", {style:"currency", currency:"USD"});
+  
+
   console.log(premiumSchedule);
 }
 
