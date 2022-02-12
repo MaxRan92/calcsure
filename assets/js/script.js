@@ -47,6 +47,9 @@ let term = "";
  */
 let expectedValueCoverage = "";
 let premium = "";
+let d = "";
+let currentYear = "";
+let premiumDate = "";
 let premiumSchedule = [];
 
 
@@ -136,11 +139,13 @@ function calculatePremium() {
 }
 
 function premiumPlan() {
-  const d = new Date();
-  let currentYear = d.getFullYear();
+  d = new Date();
+  currentYear = d.getFullYear();
+  premiumDate = new Date(currentYear, 11, 31);
   for (let i = 0; i < parseFloat(term); i++) {
     premium = expectedValueCoverage / term;
-    premiumSchedule.push({'date': currentYear, 'premium': premium})
+    premiumDate = new Date(currentYear, 11, 31);
+    premiumSchedule.push({'date': premiumDate, 'premium': premium})
     currentYear = parseFloat(currentYear) + 1;
   }
   console.log(premiumSchedule);
