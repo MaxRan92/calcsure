@@ -23,15 +23,22 @@ let factors = {
   genderFactor: 0,
   maritalFactor: 0,
   healthFactor: 0,
+  expectedValueCoverage: 0,
+  premium: 0,
+  totalPremium: 0,
+  d: 0,
+  currentYear: 0,
+  premiumDate: 0,
+  premiumFactor: 0,
 }
 
 /** initial errors for page */
 let errors = {
   age: "",
   gender: "",
-  marital_status: "",
+  maritalStatus: "",
   health: "",
-  premium_profile: "",
+  premiumProfile: "",
 };
 
 /**
@@ -40,21 +47,16 @@ let errors = {
 
 let age = "";
 let gender = "";
-let marital_status = "";
+let maritalStatus = "";
 let health = "";
-let premium_profile = "";
+let premiumProfile = "";
 let term = "";
 
 /**
- * Variables for premium Schedule
- */
-let expectedValueCoverage = "";
-let premium = "";
-let totalPremium = "";
-let d = "";
-let currentYear = "";
-let premiumDate = "";
+ * Premium Schedule Object
+*/
 let premiumSchedule = [];
+
 
 
 
@@ -125,7 +127,7 @@ function setFactors() {
   } else {
     factors.genderFactor = 0.9;
   }
-  if (marital_status == "married") {
+  if (maritalStatus == "married") {
     factors.maritalFactor = 0.95;
   } else {
     factors.maritalFactor = 1.05;
@@ -136,6 +138,13 @@ function setFactors() {
     factors.healthFactor = 1;
   } else {
     factors.healthFactor = 1.3;
+  }
+  if (premiumProfile == "constant") {
+    premiumFactor = 0;
+  } else if (premiumProfile == "increasing") {
+    premiumFactor = -0.5;
+  } else {
+    premiumFactor = 0.5;
   }
 }
 
@@ -163,7 +172,7 @@ function premiumPlan() {
   }
 
   for (let i = 0; i < parseFloat(term); i++) {
-    premium = expectedValueCoverage / term;
+    premium = expectedValueCoverage / term * (1 + premiumFactor);
     premiumDate = new Date(currentYear, 11, 31);
     premiumSchedule.push({'date': premiumDate, 'premium': premium})
     currentYear = parseFloat(currentYear) + 1;
@@ -174,8 +183,14 @@ function premiumPlan() {
     cell1.innerHTML = premiumDate.toLocaleDateString();
     cell2.innerHTML = premium.toLocaleString("en-US", {style:"currency", currency:"USD"});
 
-    // row.classList.add('collapsible');
-
+    if (premiumProfile == "constant") {
+      // do nothing
+    } else if (premiumProfile == "increasing") {
+      premiumFactor = premiumFactor + 1 / (term - 1); 
+    } else {
+      premiumFactor = premiumFactor - 1 / (term - 1);
+    }
+    
     totalPremium = totalPremium + premium;
   }
 
@@ -185,8 +200,6 @@ function premiumPlan() {
   cell1.innerHTML = "Total";
   cell2.innerHTML = totalPremium.toLocaleString("en-US", {style:"currency", currency:"USD"});
   
-
-  console.log(premiumSchedule);
 }
 
 
@@ -206,15 +219,15 @@ function checkInputs(){
   errors = {
     age: "",
     gender: "",
-    marital_status: "",
+    maritalStatus: "",
     health: "",
-    premium_profile: "",
+    premiumProfile: "",
   };
   let has_errors = false;
 
   // validate age
   age = ageInput.value;
-  if (parseInt(age) && age !== "" && (parseInt(age) >= 0 && parseInt(age) <= 100)) {
+  if (parseInt(age) && age !== "" && (parseInt(age) >= 18 && parseInt(age) <= 60)) {
     // all good
     errors.age = "";
   } else {
@@ -231,11 +244,11 @@ function checkInputs(){
   }
 
   //validate marital status
-  marital_status = maritalStatusDropDown.value;
-  if (marital_status !== "") {
-    errors.marital_status = "";
+  maritalStatus = maritalStatusDropDown.value;
+  if (maritalStatus !== "") {
+    errors.maritalStatus = "";
   } else {
-    errors.marital_status = "Please select a marital status";
+    errors.maritalStatus = "Please select a marital status";
     has_errors = true;
   }
 
@@ -250,12 +263,12 @@ function checkInputs(){
   }
 
   // premium profile
-  premium_profile = document.querySelector('input[name="premium-profile"]:checked');
-  if (premium_profile) {
-    premium_profile = premium_profile.value;
-    errors.premium_profile = "";
+  premiumProfile = document.querySelector('input[name="premium-profile"]:checked');
+  if (premiumProfile) {
+    premiumProfile = premiumProfile.value;
+    errors.premiumProfile = "";
   } else {
-    errors.premium_profile = "Please select a Premium Profile option";
+    errors.premiumProfile = "Please select a Premium Profile option";
     has_errors = true;
   }
 
