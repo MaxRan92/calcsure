@@ -103,6 +103,16 @@ h4 {
     background-color: white;
 }
 
+.btn.selected {
+    color: white;
+    background: #1F497D;
+}
+
+.btn:hover {
+    background: white;
+    color: #1F497D;
+}
+
 .input-box {
     width: 10rem;
  }
