@@ -11,6 +11,8 @@ const termAmount = document.getElementById("term");
 const outputTermAmount = document.getElementById("coverage-term");
 const dataOutput = document.querySelector('.data-output');
 const submitButton = document.getElementById("submit-button");
+const premiumTable = document.getElementById('premium-table');
+const premiumTableBody = document.getElementById('table-body');
 
 
 /**
@@ -142,13 +144,44 @@ function premiumPlan() {
   d = new Date();
   currentYear = d.getFullYear();
   premiumDate = new Date(currentYear, 11, 31);
+  
+  while (premiumTableBody.hasChildNodes()) {  
+    premiumTableBody.removeChild(premiumTableBody.firstChild);
+  }
+
   for (let i = 0; i < parseFloat(term); i++) {
     premium = expectedValueCoverage / term;
     premiumDate = new Date(currentYear, 11, 31);
     premiumSchedule.push({'date': premiumDate, 'premium': premium})
     currentYear = parseFloat(currentYear) + 1;
+
+    row = premiumTableBody.insertRow();
+    cell1 = row.insertCell(0)
+    cell2 = row.insertCell(1)
+
+    cell1.innerHTML = premiumDate;
+    cell2.innerHTML = premium;
   }
   console.log(premiumSchedule);
+}
+
+
+
+
+
+function buildScheduleHTML(payments) {
+
+  let premiumSchedule = document.getElementById('premium-schedule');
+
+  // empty out exsiting element incase they already did a calculation
+  premiumSchedule.firstChild.remove();
+
+  // loop through payments and make the table body 
+  /// need to either update innerHTML with the new stuff
+  payments.forEach((payment, index) => {
+    premiumSchedule.append(`<tr> <td> ${payment.year} </td><td>${payment.payment}</td></tr>`);
+
+  })
 }
 
 
