@@ -22,6 +22,12 @@ The site is organized in a single page, that can be divided in two sections:
 - Input section, in which the user can insert the data required.
 - Output section, in which the user can receive its insurance quote and examine the payment plan.
 
+### Design
+The website is designed in a simple and clear way: the user can easily insert his parameters in few seconds and is not discouraged by useless complexity.
+Once the user requests the quote, the transitions are smooth and the output is on focus.
+The color scheme consists mainly in Yale Blue - commonly used for banking/insurance fields - , Platinum for backgrounds and Mikado Yellow to highlight website objects interactivity.
+
+![Color Scheme](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshorts/color-palette.png)
 
 ## Gitpod Reminders
 
