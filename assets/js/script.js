@@ -42,7 +42,9 @@ let factors = {
   averagePremium: 0,
 }
 
-/** initial errors for page */
+/** 
+ * initial errors for page 
+ */
 let errors = {
   age: "",
   gender: "",
@@ -54,7 +56,6 @@ let errors = {
 /**
  * Variables based on user input
  */
-
 let age = "";
 let gender = "";
 let maritalStatus = "";
@@ -89,10 +90,12 @@ termAmount.oninput = function() {
 
 
 // Wait for the DOM to finish loading before running the calculation
-// Add event listener to the gender and submit button
+// Add event listener to the gender, submit button and collapse button
 document.addEventListener("DOMContentLoaded", function() {
   
-  //female button
+  // female button
+  // if the button is clicked, add "selected" class to it
+  // also removing, if present, "selected" class from the opposite gender button
   femaleButton.addEventListener('click', function(e) {
     e.preventDefault();
     gender = "female";
@@ -103,7 +106,9 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 
-  //male button
+  // male button
+  // if the button is clicked, add "selected" class to it
+  // also removing, if present, "selected" class from the opposite gender button
   maleButton.addEventListener('click', function(e) {
     e.preventDefault();
     gender = "male";
@@ -113,21 +118,23 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  //submit button
+  // submit button event listener
   submitButton.addEventListener('click', function(e) {
     e.preventDefault();
     checkInputs();
   });
 
-  // collapse button
+  // collapse button event listener
   collButton.addEventListener('click', function() {
+    // if the premium table is hidden, show it via adding classes
     if (premiumTable.classList.contains('hide')) {
       premiumTable.classList.remove('hide');
       premiumTable.classList.remove('dropback-table');
       premiumTable.classList.add('dropdown-table');
       dataOutput.scrollIntoView({behavior: 'smooth'});
-      collButton.innerHTML = "<p>Collapse Payment Schedule</p>"
+      collButton.setAttribute('value','Collapse payment schedule');
     } else {
+      // if already collapsed, hide it again
       const outputHeight = premiumTable.clientHeight;
       const pxToScroll = Math.min(outputHeight + 100, 800);
       window.scrollBy(0, -pxToScroll);
@@ -136,13 +143,16 @@ document.addEventListener("DOMContentLoaded", function() {
       setTimeout(function () {
         premiumTable.classList.add('hide');
       }, 500);
-      collButton.innerHTML = "<p>Show Payment Schedule</p>"
+      collButton.setAttribute('value','Show payment schedule');
     }
   });
   
 });
 
-
+/**
+ * Setting factors for premium calculation
+ * based on form inputs
+ */
 function setFactors() {
   if (gender == "male") {
     factors.genderFactor = 1.1;
@@ -170,6 +180,11 @@ function setFactors() {
   }
 }
 
+/**
+ * Calculate the fair value of the insurance
+ * Using Weibull distribution formula
+ * And including factors set by the user
+ */
 function calculateExpectedValue() {
   const coverage = coverageAmount.value;
   term = termAmount.value;
@@ -177,24 +192,28 @@ function calculateExpectedValue() {
   setFactors();
   const constant1 = 3 * factors.genderFactor * factors.maritalFactor * factors.healthFactor;
   const constant2 = 3.5;
-  
   // Weibull formula on final age
   const pSurvival = 2.718282 ** (-constant1 * (finalAge / 100) ** (constant2));
   expectedValueCoverage = coverage * (1-pSurvival);
-  console.log(expectedValueCoverage);
 }
 
+/**
+ * Generate premium plan
+ */
 function premiumPlan() {
+  // Markup to add to premiums
   const markUp = 0.1;
   d = new Date();
   currentYear = d.getFullYear();
   premiumDate = new Date(currentYear, 11, 31);
   totalPremium = 0;
   
+  // Remove all previous premium calculations
   while (premiumTableBody.hasChildNodes()) {  
     premiumTableBody.removeChild(premiumTableBody.firstChild);
   }
 
+  // Loop for yeach year until the term, push date and premium on new table rows
   for (let i = 0; i < parseFloat(term); i++) {
     premium = expectedValueCoverage / term * (1 + premiumFactor) * (1 + markUp);
     premiumDate = new Date(currentYear, 11, 31);
@@ -207,6 +226,7 @@ function premiumPlan() {
     cell1.innerHTML = premiumDate.toLocaleDateString();
     cell2.innerHTML = premium.toLocaleString("en-US", {style:"currency", currency:"USD"});
 
+    // Apply the premium factor if the premium profile is increasing or decreasing
     if (premiumProfile == "constant") {
       // do nothing
     } else if (premiumProfile == "increasing") {
@@ -218,16 +238,18 @@ function premiumPlan() {
     totalPremium = totalPremium + premium;
   }
 
+  // Push totals in the table
   row = premiumTableBody.insertRow();
   cell1 = row.insertCell(0);
   cell2 = row.insertCell(1);
   cell1.innerHTML = "<strong>Total</strong>";
   cell2.innerHTML = "<strong>" + totalPremium.toLocaleString("en-US", {style:"currency", currency:"USD"}) + "</strong>";
-  
   averagePremium = totalPremium / term;
-
 }
 
+/**
+ * Create a short description of the insurance plan
+ */
 function planDescription() {
   profileSpan.innerHTML = "Your premium life insurance plan consists in <strong>" + term + " " + premiumProfile + " payments </strong> for a total of <strong>" +
   totalPremium.toLocaleString("en-US", {style:"currency", currency:"USD", maximumFractionDigits: 0}) + "</strong> and an average premium of <strong>" +
