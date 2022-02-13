@@ -75,7 +75,7 @@ h4 {
 }
 
 .input-group h3 {
-    margin: -14px 5px 5px 25px;
+    margin: -20px 5px 5px 25px;
     background-color: #E1E2DF;
     padding: 0 5px;
     width: fit-content;
@@ -277,6 +277,10 @@ th, td {
     margin: 30px auto auto auto;
 }
 
+.row.group-title {
+    margin: 5px 0 0 0;
+}
+
 @media screen and (min-width: 767px) {
     .row {
         display: flex;
@@ -302,12 +306,17 @@ th, td {
 @media screen and (max-width: 992px) {
     .sub-row {
         display: block;
+        width: 100%;
     }
+    
 }
 
 /* tablets portait and smaller styles */
 @media screen and (max-width: 767px) {
-    
+    .input-coverage,
+    .input-term {
+        margin: 40px 0;
+    }
 }
 
 /* phone styles and smaller */
