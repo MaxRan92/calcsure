@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto&display=swap');
 
 /* General*/
-
 * {
     font-family: 'Roboto', sans-serif;
 }
@@ -69,7 +68,6 @@ header {
 }
 
 /*Body*/
-
 .data-input,
 .data-output {
     background-color: #E1E2DF;
@@ -96,7 +94,7 @@ header {
     border-style: solid;
     border-radius: 20px;
     border-color: #1F497D;
-    background-color: rgba(31, 73, 125, 0.1); 
+    background-color: rgba(31, 73, 125, 0.1);
 }
 
 #result-profile {
@@ -115,6 +113,7 @@ header {
     color: #E1E2DF;
 }
 
+/* Buttons */
 .img-buttons {
     display: flex;
     flex-direction: row;
@@ -159,13 +158,14 @@ header {
 
 .input-box {
     width: 10rem;
- }
+}
 
 #age {
     width: 3rem;
     height: 2.25rem;
 }
 
+/* radio inputs */
 .radio {
     margin-top: -1px;
     vertical-align: middle;
@@ -177,27 +177,28 @@ header {
     margin-top: 8px;
 }
 
-.radio-premium-profile > h4 {
+.radio-premium-profile>h4 {
     margin: 15px auto 2px auto;
 }
 
+/* slider input */
 .slider-container {
     margin-top: 15px;
 }
 
-.slider-container > label {
+.slider-container>label {
     height: 40px;
 }
 
-.slider-container > label, 
-.input-age > label {
+.slider-container>label,
+.input-age>label {
     margin: 0 auto 5px auto;
     font-weight: bold;
     display: block;
     padding: 0 15px 0 15px;
 }
 
-.slider-container > p {
+.slider-container>p {
     margin: 0 5px;
 }
 
@@ -221,7 +222,7 @@ header {
 
 .slider:hover {
     opacity: 1;
-  }
+}
 
 .submit-button {
     width: 75%;
@@ -245,7 +246,10 @@ header {
     display: none;
 }
 
-table, th, td {
+/* output table */
+table,
+th,
+td {
     border: 2px solid;
     width: 75%;
     border-radius: 5px;
@@ -266,11 +270,13 @@ th {
     font-size: larger;
 }
 
-th, td {
+th,
+td {
     padding: 3px;
     text-align: center;
 }
 
+/* table collapse input */
 #collapser {
     background-color: #1F497D;
     height: 50px;
@@ -288,11 +294,11 @@ th, td {
 }
 
 #collapser:hover,
-#collapser > p:hover {
+#collapser>p:hover {
     color: #1F497D;
 }
 
-#collapser > p {
+#collapser>p {
     color: #E1E2DF;
     font-size: 19px;
     text-align: center;
@@ -305,6 +311,48 @@ th, td {
     margin: auto;
 }
 
+.dropdown {
+    animation: growDown 500ms;
+}
+
+.dropdown-table {
+    animation: growDown 1500ms;
+}
+
+.dropback-table {
+    animation: growBack 500ms;
+}
+
+/* Keyframes for table transitions */
+@keyframes growDown {
+    0% {
+        transform: scaleY(0);
+        opacity: 0.1;
+        visibility: hidden;
+    }
+
+    100% {
+        transform: scaleY(1);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes growBack {
+    0% {
+        transform: scaleY(1);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        transform: scaleY(0);
+        opacity: 0.1;
+        visibility: hidden;
+    }
+}
+
+/* input error alerts */
 .errors {
     color: red;
     height: 40px;
@@ -313,8 +361,7 @@ th, td {
     padding: 0 calc(50% - 65px);
 }
 
-/* name tanja site for reference*/
-
+/* code inspired from https://codepen.io/taniarascia/pen/rOLEGe */
 .column {
     flex-basis: 100%;
 }
@@ -333,12 +380,12 @@ th, td {
     margin: 5px 0 0 0;
 }
 
-.data-input > .row {
+.data-input>.row {
     margin: auto;
 }
 
 
-/*footer*/
+/* footer */
 footer .logo {
     height: 2rem;
     margin-top: 10px;
@@ -354,7 +401,7 @@ footer {
     position: fixed;
 }
 
-.contacts   {
+.contacts {
     margin-top: 5px;
     text-align: center;
 }
@@ -371,7 +418,7 @@ footer {
     padding: 0;
 }
 
-.social-networks i{
+.social-networks i {
     font-size: 150%;
     color: #1F497D;
     margin: 10px 15px;
@@ -383,7 +430,7 @@ footer {
     margin: 10px 15px;
 }
 
-.social-networks > li {
+.social-networks>li {
     display: inline;
 }
 
@@ -393,14 +440,13 @@ footer {
 }
 
 /*404 page*/
-
-#error-page > h3,
-#error-page > p {
+#error-page>h3,
+#error-page>p {
     text-align: center;
     color: #1F497D;
 }
 
-#error-page > a {
+#error-page>a {
     display: block;
     width: fit-content;
     text-decoration: none;
@@ -421,13 +467,15 @@ footer {
     border: 1px solid #1F497D;
 }
 
+/* Responsiveness */
 @media screen and (min-width: 768px) {
     .row {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-    
+
     }
+
     .column {
         flex: 1;
     }
@@ -441,18 +489,19 @@ footer {
         height: 60px;
     }
 }
- 
+
 /* tablets landscape and smaller styles */
 @media screen and (max-width: 992px) {
     .sub-row {
         display: block;
         width: 100%;
     }
-    
+
 }
 
 /* tablets portait and smaller styles */
 @media screen and (max-width: 767px) {
+
     .input-coverage,
     .input-term {
         margin: 40px 0;
@@ -464,8 +513,8 @@ footer {
     }
 
     h4,
-    .slider-container > label, 
-    .input-age > label {
+    .slider-container>label,
+    .input-age>label {
         font-size: 20px;
     }
 
@@ -507,7 +556,7 @@ footer {
 
     .radio label {
         margin: auto 0;
-        line-height: 10px;    
+        line-height: 10px;
     }
 
     .radio-input {
@@ -543,9 +592,9 @@ footer {
     }
 }
 
-
 /* phone styles and smaller */
 @media screen and (max-width: 576px) {
+
     .data-input,
     .data-output {
         padding: 10px;
@@ -556,16 +605,15 @@ footer {
         height: 140px;
     }
 
-    h3, 
+    h3,
     h4,
     #marital-status,
     .radio,
-    .slider-container > label,
-    .input-age > label
-        {
+    .slider-container>label,
+    .input-age>label {
         font-size: 18px;
     }
-    
+
     .input-group h3 {
         margin: -20px 5px 5px 5px;
     }
@@ -579,42 +627,3 @@ footer {
     }
 
 }
- 
-.dropdown {
-    animation: growDown 500ms;
-}
-
-.dropdown-table {
-    animation: growDown 1500ms;
-}
-
-.dropback-table {
-    animation: growBack 500ms;
-}
-
-@keyframes growDown {
-0% {
-    transform: scaleY(0);
-    opacity: 0.1;
-    visibility: hidden;
-}
-100% {
-    transform: scaleY(1);
-    opacity: 1;
-    visibility: visible;
-}
-}
-
-@keyframes growBack {
-0% {
-    transform: scaleY(1);
-    opacity: 1;
-    visibility: visible;
-    }
-100% {
-    transform: scaleY(0);
-    opacity: 0.1;
-    visibility: hidden;
-}
-}
-
