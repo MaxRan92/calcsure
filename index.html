@@ -125,15 +125,15 @@
                                 <h4>Premium Profile</h4>
                                 <div class="radio-group">
                                     <div class="radio increasing">
-                                        <input type="radio" id="increasing" class="radio" name="premium-profile" value="increasing" required>
+                                        <input type="radio" id="increasing" class="radio-input" name="premium-profile" value="increasing" required>
                                         <label for="increasing">Increasing</label>
                                     </div>
                                     <div class="radio constant">
-                                        <input type="radio" id="constant" class="radio" name="premium-profile" value="constant">
+                                        <input type="radio" id="constant" class="radio-input" name="premium-profile" value="constant">
                                         <label for="constant">Constant</label>
                                     </div>
                                     <div class="radio decreasing">
-                                        <input type="radio" id="decreasing" class="radio" name="premium-profile" value="decreasing">
+                                        <input type="radio" id="decreasing" class="radio-input" name="premium-profile" value="decreasing">
                                         <label for="decreasing">Decreasing</label>
                                     </div>
                                 </div>
@@ -151,27 +151,29 @@
         </div>
     </form>
     <section class="data-output hide">
-        <h1>Your Insurance Plan</h1>
-        <div class="result-summary">
-            <p id="result-profile"></p>
-        </div>
-        <div id="collapser">
-            <p>Show Payment Schedule</p>
-        </div>
-        <table id="premium-table" class="collapsible hide">
-            <thead>
-                <tr>
-                    <th>DATE</th>
-                    <th>PREMIUM</th>
-                </tr>
-            </thead>
-            <tbody id="table-body">
-                <tr>
-                    <td>test</td>
-                    <td>test</td>
-                </tr>
-            </tbody>
-        </table>
+        <h2>Your Insurance Plan</h2>
+        <div class="output-group">
+            <div class="result-summary">
+                <p id="result-profile"></p>
+            </div>
+            <div id="collapser">
+                <p>Show Payment Schedule</p>
+            </div>
+            <table id="premium-table" class="collapsible hide">
+                <thead>
+                    <tr>
+                        <th>DATE</th>
+                        <th>PREMIUM</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <tr>
+                        <td>test</td>
+                        <td>test</td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
     </section>
 
     <footer>
