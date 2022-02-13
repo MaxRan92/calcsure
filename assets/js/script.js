@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
       collButton.innerHTML = "<p>Collapse Payment Schedule</p>"
     } else {
       const outputHeight = premiumTable.clientHeight;
-      const pxToScroll = Math.min(outputHeight + 100, 600);
+      const pxToScroll = Math.min(outputHeight + 100, 800);
       window.scrollBy(0, -pxToScroll);
       premiumTable.classList.remove('dropdown-table');
       premiumTable.classList.add('dropback-table');
