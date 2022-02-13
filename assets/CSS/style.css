@@ -155,11 +155,28 @@ h4 {
     margin-top: 8px;
 }
 
+.radio-premium-profile > h4 {
+    margin: 15px auto 2px auto;
+}
+
 .slider-container {
     margin-top: 15px;
 }
+
+.slider-container > label {
+    height: 40px;
+}
+
+.slider-container > label, 
+.input-age > label {
+    margin: 0 auto 5px auto;
+    font-weight: bold;
+    display: block;
+    padding: 0 15px 0 15px;
+}
+
 .slider-container > p {
-    margin: 5px auto;
+    margin: 0 5px;
 }
 
 .slider {
@@ -175,8 +192,9 @@ h4 {
     border-style: solid;
     border-width: 1px;
     border-color: black;
-    width: 50%;
+    width: 75%;
     height: 10px;
+    margin-top: 10px;
 }
 
 .slider:hover {
@@ -221,7 +239,7 @@ table {
 
 th {
     height: 70px;
-    color: #1F497D;
+    color: black;
     border-color: black;
     font-size: larger;
 }
@@ -297,7 +315,7 @@ th, td {
     margin: auto;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
     .row {
         display: flex;
         flex-direction: row;
@@ -339,7 +357,9 @@ th, td {
         width: 80%;
     }
 
-    h4 {
+    h4,
+    .slider-container > label, 
+    .input-age > label {
         font-size: 20px;
     }
 
@@ -363,6 +383,7 @@ th, td {
         width: 14rem;
         height: 4rem;
         font-size: 20px;
+        background-color: white;
     }
 
     .errors {
@@ -424,7 +445,10 @@ th, td {
     h3, 
     h4,
     #marital-status,
-    .radio {
+    .radio,
+    .slider-container > label,
+    .input-age > label
+        {
         font-size: 18px;
     }
     

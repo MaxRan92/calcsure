@@ -36,7 +36,7 @@
                         <div class="sub-row">
                             <div class="column">
                                 <div class="input-age input-item">
-                                    <h4>Age</h4>
+                                    <label for="age">Age</label>
                                     <input id="age" class="input-box" type="number" min="18" max="60" step="1" oninput="this.value = Math.abs(this.value)">
                                     <div class="errors" id="errors-age"></div>
                                 </div>                            
@@ -45,10 +45,10 @@
                                 <div class="gender input-item">
                                     <h4>Gender</h4>
                                     <div class="img-buttons">
-                                        <button data-type="male" class="btn gender male" value="male">
+                                        <button data-type="male" class="btn gender male" title="Male" value="male">
                                             <i class="fas fa-male fa-lg"></i>
                                         </button>
-                                        <button data-type="female" class="btn gender female" value="female">
+                                        <button data-type="female" class="btn gender female" title="Female" value="female">
                                             <i class="fas fa-female fa-lg"></i>
                                         </button>
                                     </div>
@@ -104,8 +104,8 @@
                     <div class="row">
                         <div class="column">
                             <div class="input-coverage input-item">
-                                <h4>Select the coverage amount</h4>
                                 <div class="slider-container">
+                                    <label for="coverage">Select the coverage amount</label>
                                     <input type="range" id="coverage" class="slider" name="coverage" min="10000" max="1000000" step="10000">
                                     <p><span id="coverage-value"></span> USD</p>
                                 </div>
@@ -113,8 +113,8 @@
                         </div>
                         <div class="column">
                             <div class="input-term input-item">
-                                <h4>Select the coverage term</h4>
                                 <div class="slider-container">
+                                    <label for="term">Select the coverage term</label>
                                     <input type="range" id="term" class="slider" name="term" min="5" max="50" step="1">
                                     <p><span id="coverage-term"></span> Years</p>
                                 </div>
