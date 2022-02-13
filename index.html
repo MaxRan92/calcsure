@@ -36,8 +36,8 @@
                         <div class="column">
                             <div class="input-age input-item">
                                 <h4>Age</h4>
-                                <div class="errors" id="errors-age"></div>
                                 <input id="age" class="input-box" type="number" min="18" max="60" step="1" oninput="this.value = Math.abs(this.value)">
+                                <div class="errors" id="errors-age"></div>
                             </div>                            
                         </div>
                         <div class="column">
@@ -51,6 +51,7 @@
                                         <i class="fas fa-female fa-lg"></i>
                                     </button>
                                 </div>
+                                <div class="errors" id="errors-gender"></div>
                             </div>
                         </div>
                         <div class="column">
@@ -63,23 +64,27 @@
                                         <option value="not-married">Not Married</option>
                                     </select>
                                 </div>
+                                <div class="errors" id="errors-marital-status"></div>
                             </div>
                         </div>
                         <div class="column">
                             <div id ="health" class="radio-health input-item">
                                 <h4>Health Conditions</h4>
-                                <div class="radio good-health">
-                                    <input type="radio" id="good-health" class="radio-input" name="health" value="good">
-                                    <label for="good-health">Good</label>
+                                <div class="radio-group">
+                                    <div class="radio good-health">
+                                        <input type="radio" id="good-health" class="radio-input" name="health" value="good">
+                                        <label for="good-health">Good</label>
+                                    </div>
+                                    <div class="radio medium-health">
+                                        <input type="radio" id="medium-health" class="radio-input" name="health" value="medium">
+                                        <label for="medium-health">Medium</label>
+                                    </div>
+                                    <div class="radio poor-health">
+                                        <input type="radio" id="poor-health" class="radio-input" name="health" value="poor">
+                                        <label for="poor-health">Poor</label>
+                                    </div>
                                 </div>
-                                <div class="radio medium-health">
-                                    <input type="radio" id="medium-health" class="radio-input" name="health" value="medium">
-                                    <label for="medium-health">Medium</label>
-                                </div>
-                                <div class="radio poor-health">
-                                    <input type="radio" id="poor-health" class="radio-input" name="health" value="poor">
-                                    <label for="poor-health">Poor</label>
-                                </div>
+                                <div class="errors" id="errors-health"></div>
                             </div>
                         </div>
                     </div>
@@ -96,32 +101,39 @@
                         <div class="column">
                             <div class="input-coverage input-item">
                                 <h4>Select the coverage amount</h4>
-                                <input type="range" id="coverage" name="coverage" min="10000" max="1000000" step="10000">
-                                <p><span id="coverage-value"></span> USD</p>
+                                <div class="slider">
+                                    <input type="range" id="coverage" name="coverage" min="10000" max="1000000" step="10000">
+                                    <p><span id="coverage-value"></span> USD</p>
+                                </div>
                             </div>
                         </div>
                         <div class="column">
                             <div class="input-term input-item">
                                 <h4>Select the coverage term</h4>
-                                <input type="range" id="term" name="term" min="5" max="50" step="1">
-                                <p><span id="coverage-term"></span> Years</p>
+                                <div class="slider">
+                                    <input type="range" id="term" name="term" min="5" max="50" step="1">
+                                    <p><span id="coverage-term"></span> Years</p>
+                                </div>
                             </div>
                         </div>
                         <div class="column">
                             <div class="radio-premium-profile input-item">
                                 <h4>Premium Profile</h4>
-                                <div class="radio increasing">
-                                    <input type="radio" id="increasing" class="radio" name="premium-profile" value="increasing" required>
-                                    <label for="increasing">Increasing</label>
+                                <div class="radio-group">
+                                    <div class="radio increasing">
+                                        <input type="radio" id="increasing" class="radio" name="premium-profile" value="increasing" required>
+                                        <label for="increasing">Increasing</label>
+                                    </div>
+                                    <div class="radio constant">
+                                        <input type="radio" id="constant" class="radio" name="premium-profile" value="constant">
+                                        <label for="constant">Constant</label>
+                                    </div>
+                                    <div class="radio decreasing">
+                                        <input type="radio" id="decreasing" class="radio" name="premium-profile" value="decreasing">
+                                        <label for="decreasing">Decreasing</label>
+                                    </div>
                                 </div>
-                                <div class="radio constant">
-                                    <input type="radio" id="constant" class="radio" name="premium-profile" value="constant">
-                                    <label for="constant">Constant</label>
-                                </div>
-                                <div class="radio decreasing">
-                                    <input type="radio" id="decreasing" class="radio" name="premium-profile" value="decreasing">
-                                    <label for="decreasing">Decreasing</label>
-                                </div>
+                                <div class="errors" id="errors-premium-profile"></div>
                             </div>
                         </div>
                     </div>

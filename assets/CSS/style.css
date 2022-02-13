@@ -128,6 +128,17 @@ h4 {
     padding-left: calc(50% - 50px);
 }
 
+.radio-group {
+    margin-top: 8px;
+}
+
+.slider {
+    margin-top: 15px;
+}
+.slider > p {
+    margin: 5px auto;
+}
+
 .submit-button {
     width: 75%;
     height: 50px;
@@ -208,6 +219,14 @@ th, td {
 .result-summary {
     width: 90%;
     margin: auto;
+}
+
+.errors {
+    color: red;
+    height: 40px;
+    font-size: 12px;
+    text-align: left;
+    padding: 0 calc(50% - 65px);
 }
 
 /* name tanja site for reference*/

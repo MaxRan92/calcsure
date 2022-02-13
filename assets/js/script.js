@@ -16,6 +16,11 @@ const premiumTable = document.getElementById('premium-table');
 const premiumTableBody = document.getElementById('table-body');
 const collButton = document.getElementById("collapser");
 const profileSpan = document.getElementById("result-profile");
+const errorsAge = document.getElementById("errors-age");
+const errorsGender = document.getElementById("errors-gender");
+const errorsMaritalStatus = document.getElementById("errors-marital-status");
+const errorsHealth = document.getElementById("errors-health");
+const errorsPremiumProfile = document.getElementById("errors-premium-profile");
 
 
 /**
@@ -243,9 +248,9 @@ function checkInputs(){
     errors.age = "";
   } else {
     has_errors = true;
-    errors.age = "Please enter a number between 0 and 100";
+    errors.age = "Please enter a number between 18 and 60";
   }
-  document.getElementById("errors-age").innerHTML = errors.age;
+  errorsAge.innerHTML = errors.age;
   
   // validate gender
   if (gender === "") {
@@ -254,6 +259,7 @@ function checkInputs(){
   } else {
     errors.gender = "";
   }
+  errorsGender.innerHTML = errors.gender;
 
   //validate marital status
   maritalStatus = maritalStatusDropDown.value;
@@ -263,6 +269,7 @@ function checkInputs(){
     errors.maritalStatus = "Please select a marital status";
     has_errors = true;
   }
+  errorsMaritalStatus.innerHTML = errors.maritalStatus;
 
   // validate health_status
   health = document.querySelector('input[name="health"]:checked');
@@ -273,6 +280,7 @@ function checkInputs(){
     errors.health = "Please select a health status";
     has_errors = true;
   }
+  errorsHealth.innerHTML = errors.health;
 
   // premium profile
   premiumProfile = document.querySelector('input[name="premium-profile"]:checked');
@@ -283,6 +291,7 @@ function checkInputs(){
     errors.premiumProfile = "Please select a Premium Profile option";
     has_errors = true;
   }
+  errorsPremiumProfile.innerHTML = errors.premiumProfile;
 
   showResults = !has_errors;
 
