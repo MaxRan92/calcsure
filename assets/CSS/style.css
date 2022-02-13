@@ -281,6 +281,10 @@ th, td {
     margin: 5px 0 0 0;
 }
 
+.data-input > .row {
+    margin: auto;
+}
+
 @media screen and (min-width: 767px) {
     .row {
         display: flex;
@@ -317,7 +321,61 @@ th, td {
     .input-term {
         margin: 40px 0;
     }
+
+    .data-input,
+    .data-output {
+        width: 80%;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    #age {
+        width: 8rem;
+        height: 4rem;
+        font-size: 20px;
+    }
+
+    .btn {
+        width: 10rem;
+        height: 4rem;
+    }
+
+    .fa-male:before,
+    .fa-female:before {
+        font-size: 30px;
+    }
+
+    #marital-status {
+        width: 14rem;
+        height: 4rem;
+        font-size: 20px;
+    }
+
+    .errors {
+        font-size: 18px;
+        padding: 0 calc(50% - 150px);
+        text-align: center;
+    }
+
+    .radio-group {
+        width: 90%;
+        justify-content: space-between;
+    }
+
+    .radio-group label {
+        margin: auto 0;
+    
+    }
+
+    .radio {
+        width: 30px;
+        height: 30px;
+    }
+
 }
+
 
 /* phone styles and smaller */
 @media screen and (max-width: 576px) {
