@@ -179,9 +179,11 @@ function calculateExpectedValue() {
   // Weibull formula on final age
   const pSurvival = 2.718282 ** (-constant1 * (finalAge / 100) ** (constant2));
   expectedValueCoverage = coverage * (1-pSurvival);
+  console.log(expectedValueCoverage);
 }
 
 function premiumPlan() {
+  const markUp = 0.1;
   d = new Date();
   currentYear = d.getFullYear();
   premiumDate = new Date(currentYear, 11, 31);
@@ -192,7 +194,7 @@ function premiumPlan() {
   }
 
   for (let i = 0; i < parseFloat(term); i++) {
-    premium = expectedValueCoverage / term * (1 + premiumFactor);
+    premium = expectedValueCoverage / term * (1 + premiumFactor) * (1 + markUp);
     premiumDate = new Date(currentYear, 11, 31);
     premiumSchedule.push({'date': premiumDate, 'premium': premium})
     currentYear = parseFloat(currentYear) + 1;
