@@ -7,6 +7,14 @@ The output consists in a time series of the yearly premium they have to pay in o
 
 ![Responsive Mockup](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshorts/am-i-responsive.png)
 
+## Author
+Massimo Ranalli
+
+## Site Aims
+- Create a marketing oriented tool that helps users to have an indicative life insurance plan without human intervention from consultants
+- Include several parameters about personal characteristics and desired insurance profile to calculate a personalized premium plan
+- Present key summary data as first output, with the possibility to analize year-by-year payments required
+
 ## Gitpod Reminders
 
 To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
