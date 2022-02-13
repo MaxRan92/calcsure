@@ -6,10 +6,12 @@ const ageInput = document.getElementById('age');
 const femaleButton = document.querySelector('.btn.gender.female');
 const maleButton = document.querySelector('.btn.gender.male');
 const maritalStatusDropDown = document.getElementById('marital-status');
+const healthConditionsInput = document.getElementById('health');
 const coverageAmount = document.getElementById("coverage");
 const outputCoverageAmount = document.getElementById("coverage-value");
 const termAmount = document.getElementById("term");
 const outputTermAmount = document.getElementById("coverage-term");
+const premiumProfileInput = document.getElementById('premium')
 const dataOutput = document.querySelector('.data-output');
 const submitButton = document.getElementById("submit-button");
 const premiumTable = document.getElementById('premium-table');
@@ -263,6 +265,7 @@ function checkInputs(){
   } else {
     has_errors = true;
     errors.age = "Please enter a number between 18 and 60";
+    ageInput.scrollIntoView({behavior: 'smooth'});
   }
   errorsAge.innerHTML = errors.age;
   
@@ -270,6 +273,7 @@ function checkInputs(){
   if (gender === "") {
     errors.gender = "Please select a gender";
     has_errors = true;
+    maleButton.scrollIntoView({behavior: 'smooth'});
   } else {
     errors.gender = "";
   }
@@ -282,6 +286,7 @@ function checkInputs(){
   } else {
     errors.maritalStatus = "Please select a marital status";
     has_errors = true;
+    maritalStatusDropDown.scrollIntoView({behavior: 'smooth'});
   }
   errorsMaritalStatus.innerHTML = errors.maritalStatus;
 
@@ -293,6 +298,7 @@ function checkInputs(){
   } else {
     errors.health = "Please select a health status";
     has_errors = true;
+    healthConditionsInput.scrollIntoView({behavior: 'smooth'});
   }
   errorsHealth.innerHTML = errors.health;
 
@@ -304,6 +310,7 @@ function checkInputs(){
   } else {
     errors.premiumProfile = "Please select a Premium Profile option";
     has_errors = true;
+    premiumProfileInput.scrollIntoView({behavior: 'smooth'});
   }
   errorsPremiumProfile.innerHTML = errors.premiumProfile;
 
