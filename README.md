@@ -13,7 +13,7 @@ Massimo Ranalli
 ## Site Aims
 - Create a marketing oriented tool that helps users to have an indicative life insurance plan without human intervention from consultants
 - Include several parameters about personal characteristics and desired insurance profile to calculate a personalized premium plan
-- Present key summary data as first output, with the possibility to analize year-by-year payments required
+- Present key summary data as first output, with the possibility to analize the year-over-year payments required
 
 ## Gitpod Reminders
 
