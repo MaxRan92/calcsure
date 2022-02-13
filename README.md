@@ -11,9 +11,17 @@ The output consists in a time series of the yearly premium they have to pay in o
 Massimo Ranalli
 
 ## Site Aims
-- Create a marketing oriented tool that helps users to have an indicative life insurance plan without human intervention from consultants
-- Include several parameters about personal characteristics and desired insurance profile to calculate a personalized premium plan
-- Present key summary data as first output, with the possibility to analize the year-over-year payments required
+- Create a marketing oriented tool that helps users to have an indicative life insurance plan without human intervention from consultants.
+- Include several parameters about personal characteristics and desired insurance profile to calculate a personalized premium plan.
+- Present key summary data as first output, with the possibility to analize the year-over-year payments required.
+
+## UX
+
+### Site Structure
+The site is organized in a single page, that can be divided in two sections:
+- Input section, in which the user can insert the data required.
+- Output section, in which the user can receive its insurance quote and examine the payment plan.
+
 
 ## Gitpod Reminders
 
