@@ -45,16 +45,16 @@ In the following paragraphs you will find the description of the different secti
     3. Premium profile: the user can pick constant payments, increasing payments and decreasing payments. With increasing premium profile, the first premium is 50% of the average premium and increases to reach a last premium equal to 150% of the average premium. The opposite is true for decreasing premium profile.
   - Once the user has selected all the required data (if something is missing, an error will appear), he can click to the Calculate your plan button do see the proposed insurance plan.
 
-![Input Area]()
+![Input Area](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshorts/input-area.png)
 
 ### Output Area
 The output box is first presented in a condensed version with key data: number of payments, total payments and average yearly premium.
 
-![Condensed Output]()
+![Condensed Output](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshorts/condensed-output.png)
 
 The user can also click on the "Show payment schedule" button below to show a table with the time series of all the payment along with the subtotal.
 
-![Payment Schedule]()
+![Payment Schedule](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshorts/payment-schedule.png)
 
 ## Gitpod Reminders
 
