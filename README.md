@@ -88,11 +88,9 @@ Below you may find the distribution function results for a *married female in go
 
 ### From the distribution to the premium plan
 
-Given *t* = the user current age and *T* = the user age at the end of the insurance contract, the difference *F(T) - F(t)* returns the probability *p* that the user will survive at the end of the insurance contract.
-Hence, *(1 - p)* is the probability that the user will not survive and the coverage will be paid from the insurance.
-By multiplying this last probability to the coverage amount in USD, we obtain the **expected value of the coverage**.
-The **expected value of the coverage** is multiplied by a mark-up of 10% (which represents the average profit of the insurance) and divided by the term of the policy, to obtain the average yearly premium. 
-The average yearly premium is then multiplied by a last factor that returns the premium at each datestamp following the premium profile (inreasing, decreasing or constant in time): in this way, the payment schedule is populated. 
+  - Given *t* = the user current age, *F(t)* returns the probability *p* that the user will survive at the end of the insurance contract. Hence, *(1 - p)* is the probability that the user will not survive and the coverage will be paid from the insurance. By multiplying this last probability to the coverage amount in USD, we obtain the **expected value of the coverage**.
+  - The **expected value of the coverage** is multiplied by a mark-up of 10% (which represents the average profit of the insurance) and divided by the term of the policy, to obtain the **average yearly premium**. 
+  - The **average yearly premium** is then multiplied by a last factor that returns the premium at each datestamp following the premium profile selected (inreasing, decreasing or constant in time): in this way, the **payment schedule is populated**. 
 
 ## Gitpod Reminders
 
