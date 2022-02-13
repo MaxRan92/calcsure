@@ -38,20 +38,34 @@ h4 {
     margin: 2px auto;
 }
 
-/* Heading */
+/* Header */
+header,
+footer {
+    background-color: #E1E2DF;
+}
+
+header {
+    height: 120px;
+}
 
 .heading {
     text-align: center;
     font-family: 'Lato', sans-serif;
     font-size: 1.5rem;
     color: #1F497D;
+    padding: 0;
+    margin: 0 auto;
 }
 
 .logo {
-    height: 5rem;
+    height: 4.5rem;
     width: auto;
     margin: auto;
     display: block;
+}
+
+.spacer {
+    height: 115px;
 }
 
 /*Body*/
@@ -325,13 +339,6 @@ th, td {
 
 
 /*footer*/
-header,
-footer {
-    background-color: #E1E2DF;
-    height: 120px;
-    width: 100%;
-    align-items: center;
-}
 
 footer .logo {
     height: 2rem;
@@ -339,9 +346,13 @@ footer .logo {
 }
 
 footer {
+    height: 120px;
+    width: 100%;
+    align-items: center;
     padding: 1px 0 0 0;
     bottom: 0;
     width: 100%;
+    position: fixed;
 }
 
 .contacts   {
@@ -364,6 +375,12 @@ footer {
 .social-networks i{
     font-size: 150%;
     color: #1F497D;
+    margin: 10px 15px;
+}
+
+.social-networks i:hover {
+    font-size: 150%;
+    color: #FFC31F;
     margin: 10px 15px;
 }
 
@@ -500,7 +517,11 @@ footer {
     .data-input,
     .data-output {
         padding: 10px;
-        width: 100%;
+        width: 95%;
+    }
+
+    header {
+        height: 140px;
     }
 
     h3, 
