@@ -3,7 +3,7 @@
 ## Overview
 
 CalcSure is a tool designed for insurance companies' websites. The tool allows users to insert their personal data and the parameters of the life insurance policy they would like to subscribe, in order to get a personalized quote based on their unique profile.
-The output consists in a time series of the yearly premium they have to pay in order to get the insurance coverage amount requested.
+The output consists in a time series of the yearly premium they would need to pay in order to get the insurance coverage requested.
 
 ![Responsive Mockup](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshots/am-i-responsive.png)
 
@@ -11,7 +11,7 @@ The output consists in a time series of the yearly premium they have to pay in o
 Massimo Ranalli
 
 ## Site Aims
-- Create a marketing oriented tool that helps users to have an indicative life insurance plan without human intervention from consultants.
+- Create a marketing oriented tool that helps users to have an indicative life insurance quote without the initial intervention of a consultant.
 - Include several parameters about personal characteristics and desired insurance profile to calculate a personalized premium plan.
 - Present key summary data as first output, with the possibility to analize the year-over-year payments required.
 
@@ -24,27 +24,27 @@ The site is organized in a single page, that can be divided in two sections:
 
 ### Design
 The website is designed in a simple and clear way: the user can easily insert his parameters in few seconds and he is not discouraged by useless complexity.
-Once the user requests the quote, the transition to focus on the output area is smooth.
-The color scheme consists mainly in Yale Blue - commonly used for banking/insurance fields - , Platinum for backgrounds and Mikado Yellow to highlight website objects interactivity.
+Once the user requests the quote, the transition to the output area is smooth and clean.
+The color scheme consists mainly in Yale Blue - commonly used in banking/insurance fields -, Platinum for backgrounds and Mikado Yellow to highlight object interactivity.
 
 ![Color Scheme](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshots/color-palette.png)
 
 ## Features 
 
-In the following paragraphs you will find the description of the different section of the site, in order to understand how the Site Aims were put to practice.
+In the following paragraphs you will find the description of the different sections of the site, in order to understand how the proposed aims were put to practice.
 
 ### Input Area
 
-  - In the Personal Information box, the user can insert his data, such as:
+  - In the *Personal Information* box, the user can insert his data, such as:
     1. Age, between 18 and 60 years old
     2. Gender
     3. Marital Status
     4. Health Conditions (Good, Medium, Poor)
 
-  - In the Customize your insurance plan box, the user can insert the following contract parameters:
-    1. Coverage amount: the sum to receive if the insured death event occurs
+  - In the *Customize your insurance plan* box, the user can insert the following contract parameters:
+    1. Coverage amount: the sum to receive if the insured event occurs
     2. Coverage term: the term, in years, of the insurance policy
-    3. Premium profile: the user can pick constant payments, increasing payments and decreasing payments. With increasing premium profile, the first premium is 50% of the average premium and increases to reach a last premium equal to 150% of the average premium. The opposite is true for decreasing premium profile.
+    3. Premium profile: the user can pick constant, increasing or decreasing payments
 
   - Once the user has selected all the required data (if something is missing, an error will appear), he can click to the Calculate your plan button do see the proposed insurance plan.
 
@@ -92,7 +92,8 @@ Below you may find the distribution function results for a *married female in go
 
   - Given *t* = the user current age, *F(t)* returns the probability *p* that the user will survive at the end of the insurance contract. Hence, *(1 - p)* is the probability that the user will not survive and the coverage will be paid from the insurance. By multiplying this last probability to the coverage amount in USD, we obtain the **expected value of the coverage**.
   - The **expected value of the coverage** is multiplied by a mark-up of 10% (which represents the average profit of the insurance) and divided by the term of the policy, to obtain the **average yearly premium**. 
-  - The **average yearly premium** is then multiplied by a last factor that returns the premium at each datestamp following the premium profile selected (inreasing, decreasing or constant in time): in this way, the **payment schedule is populated**. 
+  - The **average yearly premium** is then multiplied by a last factor that returns the premium at each datestamp following the premium profile selected (inreasing, decreasing or constant in time): in this way, the **payment schedule is populated**.
+  - With an increasing *premium profile*, the first premium is 50% of the average premium and increases to reach a last premium equal to 150% of the average premium. The opposite is true for decreasing premium profile.
 
 
 ## Testing 
