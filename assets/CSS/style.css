@@ -64,7 +64,6 @@ h4 {
 
 .input-group {
     width: 100%;
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: auto;
@@ -117,65 +116,65 @@ h4 {
     width: 10rem;
  }
 
- #age {
+#age {
     width: 3rem;
     height: 2.25rem;
- }
+}
 
- .radio {
+.radio {
     margin-top: -1px;
     vertical-align: middle;
-  }
+}
 
-  .submit-button {
-      width: 75%;
-      height: 50px;
-      margin: 20px auto;
-      display: block;
-      border-radius: 5px;
-      border-width: 1px;
-      font-weight: bold;
-      font-size: larger;
-      background-color: #1F497D;
-      color: #E1E2DF;
-  }
+.submit-button {
+    width: 75%;
+    height: 50px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 5px;
+    border-width: 1px;
+    font-weight: bold;
+    font-size: larger;
+    background-color: #1F497D;
+    color: #E1E2DF;
+}
 
-  .submit-button:hover {
-      background-color: #FFC31F;
-      color: #1F497D;
-  }
+.submit-button:hover {
+    background-color: #FFC31F;
+    color: #1F497D;
+}
 
-  .hide {
-      display: none;
-  }
+.hide {
+    display: none;
+}
 
-  table, th, td {
+table, th, td {
     border: 2px solid;
     width: 75%;
     border-radius: 5px;
     border-width: 1px;
     border-collapse: collapse;
     margin: auto;
-  }
+}
 
-  table {
-      background-color: white;
-      table-layout: fixed;
-  }
+table {
+    background-color: white;
+    table-layout: fixed;
+}
 
-  th {
-      height: 70px;
-      color: #1F497D;
-      border-color: black;
-      font-size: larger;
-  }
+th {
+    height: 70px;
+    color: #1F497D;
+    border-color: black;
+    font-size: larger;
+}
 
-  th, td {
+th, td {
     padding: 3px;
     text-align: center;
-  }
+}
 
-  #collapser {
+#collapser {
     background-color: #1F497D;
     height: 50px;
     width: 75%;
@@ -185,26 +184,44 @@ h4 {
     font-weight: bold;
     margin: auto;
     display: block;
-  }
+}
 
-  #collapser:hover {
+#collapser:hover {
     background-color: #FFC31F;
-  }
+}
 
-  #collapser:hover,
-  #collapser > p:hover {
+#collapser:hover,
+#collapser > p:hover {
     color: #1F497D;
-  }
+}
 
-  #collapser > p {
+#collapser > p {
     color: #E1E2DF;
     font-size: 19px;
     text-align: center;
     margin: auto;
     line-height: 50px;
-  }
+}
 
-  .result-summary {
-      width: 90%;
-      margin: auto;
-  }
+.result-summary {
+    width: 90%;
+    margin: auto;
+}
+
+/* name tanja site for reference*/
+
+.column {
+    flex-basis: 100%;
+}
+
+
+@media screen and (min-width: 800px) {
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .column {
+        flex: 1;
+    }
+}

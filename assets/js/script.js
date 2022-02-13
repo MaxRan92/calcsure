@@ -1,3 +1,4 @@
+/*jshint esversion: 7 */
 /**
  * DOM elements of interest for calculations
  */
@@ -244,6 +245,7 @@ function checkInputs(){
     has_errors = true;
     errors.age = "Please enter a number between 0 and 100";
   }
+  document.getElementById("errors-age").innerHTML = errors.age;
   
   // validate gender
   if (gender === "") {
@@ -293,6 +295,5 @@ function checkInputs(){
     dataOutput.scrollIntoView();
   } else {
     dataOutput.classList.add('hide');
-    console.log(errors);
   }
 }
