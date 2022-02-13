@@ -254,8 +254,8 @@
   */
  function planDescription() {
    profileSpan.innerHTML = "Your premium life insurance plan consists in <strong>" + term + " " + premiumProfile + " payments </strong> for a total of <strong>" +
-     factors.totalPremium.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }) + "</strong> and an average premium of <strong>" +
-     factors.averagePremium.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }) + "</strong>.";
+     factors.totalPremium.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 }) + "</strong> and an average premium of <strong>" +
+     factors.averagePremium.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 }) + "</strong>.";
  }
  
  
