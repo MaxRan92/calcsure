@@ -68,6 +68,18 @@ h4 {
     justify-content: space-between;
     margin: auto;
     align-items: center;
+    margin: 30px 0;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: #1F497D;
+}
+
+.input-group h3 {
+    margin: -14px 5px 5px 25px;
+    background-color: #E1E2DF;
+    padding: 0 5px;
+    width: fit-content;
 }
 
 .img-buttons {
@@ -266,4 +278,27 @@ th, td {
     .column {
         flex: 1;
     }
+}
+
+
+
+/* laptop styles and smaller styles */
+@media screen and (max-width: 1200px) {
+    
+}
+ 
+/* tablets landscape and smaller styles */
+@media screen and (max-width: 992px) {
+    
+}
+
+/* tablets portait and smaller styles */
+@media screen and (max-width: 767px) {
+    
+}
+
+/* phone styles and smaller */
+@media screen and (max-width: 576px) {
+
+
 }
