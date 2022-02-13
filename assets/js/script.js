@@ -121,8 +121,10 @@ document.addEventListener("DOMContentLoaded", function() {
   collButton.addEventListener('click', function() {
     if (premiumTable.classList.contains('hide')) {
       premiumTable.classList.remove('hide');
+      collButton.innerHTML = "<p>Collapse Payment Schedule</p>"
     } else {
       premiumTable.classList.add('hide');
+      collButton.innerHTML = "<p>Show Payment Schedule</p>"
     }
   });
   
@@ -213,9 +215,9 @@ function premiumPlan() {
 }
 
 function planDescription() {
-  profileSpan.innerHTML = "Your premium life insurance plan consists in <strong>" + term + " " + premiumProfile + " payments </strong> for a total of <strong>" 
-  + totalPremium.toLocaleString("en-US", {style:"currency", currency:"USD", maximumFractionDigits: 0}) + "</strong> and an average premium of <strong>" 
-  + averagePremium.toLocaleString("en-US", {style:"currency", currency:"USD", maximumFractionDigits: 0}) + "</strong>.";
+  profileSpan.innerHTML = "Your premium life insurance plan consists in <strong>" + term + " " + premiumProfile + " payments </strong> for a total of <strong>" +
+  totalPremium.toLocaleString("en-US", {style:"currency", currency:"USD", maximumFractionDigits: 0}) + "</strong> and an average premium of <strong>" +
+  averagePremium.toLocaleString("en-US", {style:"currency", currency:"USD", maximumFractionDigits: 0}) + "</strong>.";
 }
 
 
