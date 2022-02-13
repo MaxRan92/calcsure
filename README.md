@@ -5,7 +5,7 @@
 CalcSure is a tool designed for insurance companies' websites. The tool allows users to insert their personal data and the parameters of the life insurance policy they would like to subscribe, in order to get a personalized quote based on their unique profile.
 The output consists in a time series of the yearly premium they have to pay in order to get the insurance coverage amount requested.
 
-![Responsive Mockup](https://github.com/MaxRan92/calcsure/blob/main/docs/screenshots/am-i-responsive.PNG)
+![Responsive Mockup](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshorts/am-i-responsive.png)
 
 ## Gitpod Reminders
 
