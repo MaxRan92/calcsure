@@ -404,6 +404,7 @@ footer {
     display: block;
     width: fit-content;
     text-decoration: none;
+    padding: 5px;
 }
 
 .btn-error {
