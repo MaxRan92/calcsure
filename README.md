@@ -46,16 +46,16 @@ In the following paragraphs you will find the description of the different secti
     2. Coverage term: the term, in years, of the insurance policy
     3. Premium profile: the user can pick constant, increasing or decreasing payments
 
-  - Once the user has selected all the required data (if something is missing, an error will appear), he can click to the Calculate your plan button do see the proposed insurance plan.
+  - Once the user has selected all the required data (if something is missing, an error will appear), he can click to the *Calculate your plan* button to see the proposed insurance plan.
 
 ![Input Area](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshots/input-area.png)
 
 ### Output Area
-The output box is first presented in a condensed version with key data: number of payments, total payments and average yearly premium.
+The output box is first presented in a condensed version hosting key data: number of payments, total payments and average yearly premium.
 
 ![Condensed Output](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshots/condensed-output.png)
 
-The user can also click on the "Show payment schedule" button below to show a table with the time series of all the payment along with the subtotal.
+The user can then click on the *Show payment schedule* button below to show a table with the time series of all the payment, along with the subtotal.
 
 ![Payment Schedule](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshots/payment-schedule.png)
 
@@ -63,8 +63,8 @@ The user can also click on the "Show payment schedule" button below to show a ta
 The input parameters are inserted in a probability function that calculates the likelihood that the insured event will occur. Below you may find a description of the probability function and how it is used to generate the premium schedule.
 
 ### Weibull Distribution
-The Weibull Distribution is a continuous probability distribution widely used in survival analysis and many other fields. [Discover More](https://en.wikipedia.org/wiki/Weibull_distribution)
-For the purpose of this project, below you may find its forumla, which returns the survival probability at age **t**. 
+The Weibull Distribution is a continuous probability distribution widely used in survival analysis and many other fields ([Discover More](https://en.wikipedia.org/wiki/Weibull_distribution)).
+For the purpose of this project, below you may find one of the numerous variants of its forumla, which returns the survival probability given age **t** and several other parameters, described below. 
 
 ![Weibull Function](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshots/weibull-function.png)
 
@@ -78,22 +78,22 @@ Where:
   - **b** is a constant equal to 3.5
 
 The rationale is the following:
-  - Statistically, females tendsto live longer than men
-  - Statistically, married people tend to live more than not married people
-  - Statistically, people in a healthy condition live longer than people with poor health 
+  - On average, females tend to live longer than men
+  - On average, married people tend to live more than not married people
+  - On average, people in a healthy condition live longer than people with poor health 
 
-Below you may find the distribution function results for a *married female in good health* and for a *not married man with poor health*.  
+Below you may find two distribution functions returning the survival probabilities for a *married female in good health* and for a *not married man with poor health*.  
 
 ![Weibull Distribution Example](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshots/weibull-graph.png)
 
-**IMPORTANT**: the parameters of the function are identified in a rough and qualitative way. They are not the result of real actuarial table: their implementation would require a database that is not in the scope and capabilities of this project.
+**IMPORTANT**: the parameters of the function are identified in a rough and qualitative way. They are not the result of real actuarial table: their implementation would require a database that is not in the scope of this project.
 
 ### From the probability distribution to the premium plan
 
-  - Given *t* = the user current age, *F(t)* returns the probability *p* that the user will survive at the end of the insurance contract. Hence, *(1 - p)* is the probability that the user will not survive and the coverage will be paid from the insurance. By multiplying this last probability to the coverage amount in USD, we obtain the **expected value of the coverage**.
+  - Given *t* = the user current age, *F(t)* returns the probability *p* that the user will survive at the end of the insurance contract. Hence, *(1 - p)* is the probability that the user will not survive and the coverage will be paid from the insurance. By multiplying this last probability by the coverage amount in USD, we obtain the **expected value of the coverage**.
   - The **expected value of the coverage** is multiplied by a mark-up of 10% (which represents the average profit of the insurance) and divided by the term of the policy, to obtain the **average yearly premium**. 
   - The **average yearly premium** is then multiplied by a last factor that returns the premium at each datestamp following the premium profile selected (inreasing, decreasing or constant in time): in this way, the **payment schedule is populated**.
-  - With an increasing *premium profile*, the first premium is 50% of the average premium and increases to reach a last premium equal to 150% of the average premium. The opposite is true for decreasing premium profile.
+  - With an increasing **premium profile**, the first premium is 50% less than the average premium and increases linearly to reach a last premium that is 50% more than the average premium. The opposite is true for a decreasing premium profile.
 
 
 ## Testing 
@@ -118,7 +118,7 @@ All the pages received 100/100 on Accessibility, Best Practices and SEO requirem
 Performance scores are close to 100 and, in any case, over 90.
 
 ### Unfixed Bugs
-No unfixed bugs has been discovered as of today.
+No unfixed bugs has been discovered as of last update.
 
 ## Deployment
 
@@ -137,9 +137,9 @@ I would like to thank again my mentor [Malia Havlicek](https://github.com/maliah
 
 ### Content
 - As a finance graduate, the idea along with its mathematical rationale was mainly sourced by my past studies.
-- Regarding the content design, I browsed online [similar services](https://www.policybazaar.com/life-insurance/life-insurance-calculator/) and they gave me good inspiration -  
+- Regarding the content design, I browsed online [similar services](https://www.policybazaar.com/life-insurance/life-insurance-calculator/) and they gave me good inspiration.  
 
 ### Media
-- The logo is made with [GraphicSprings](https://www.graphicsprings.com/)
-- The icons in the footer are taken from [Font Awesome](https://fontawesome.com/)
+- The CalcSure logo is made with [GraphicSprings](https://www.graphicsprings.com/)
+- The icons in the footer and buttons are taken from [Font Awesome](https://fontawesome.com/)
 - The icon on the web page tab are made with [Favicon](https://favicon.io/)  
