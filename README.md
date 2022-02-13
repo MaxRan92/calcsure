@@ -5,7 +5,7 @@
 CalcSure is a tool designed for insurance companies' websites. The tool allows users to insert their personal data and the parameters of the life insurance policy they would like to subscribe, in order to get a personalized quote based on their unique profile.
 The output consists in a time series of the yearly premium they have to pay in order to get the insurance coverage amount requested.
 
-![Responsive Mockup](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshorts/am-i-responsive.png)
+![Responsive Mockup](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshots/am-i-responsive.png)
 
 ## Author
 Massimo Ranalli
@@ -27,7 +27,7 @@ The website is designed in a simple and clear way: the user can easily insert hi
 Once the user requests the quote, the transition to focus on the output area is smooth.
 The color scheme consists mainly in Yale Blue - commonly used for banking/insurance fields - , Platinum for backgrounds and Mikado Yellow to highlight website objects interactivity.
 
-![Color Scheme](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshorts/color-palette.png)
+![Color Scheme](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshots/color-palette.png)
 
 ## Features 
 
@@ -48,16 +48,16 @@ In the following paragraphs you will find the description of the different secti
 
   - Once the user has selected all the required data (if something is missing, an error will appear), he can click to the Calculate your plan button do see the proposed insurance plan.
 
-![Input Area](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshorts/input-area.png)
+![Input Area](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshots/input-area.png)
 
 ### Output Area
 The output box is first presented in a condensed version with key data: number of payments, total payments and average yearly premium.
 
-![Condensed Output](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshorts/condensed-output.png)
+![Condensed Output](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshots/condensed-output.png)
 
 The user can also click on the "Show payment schedule" button below to show a table with the time series of all the payment along with the subtotal.
 
-![Payment Schedule](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshorts/payment-schedule.png)
+![Payment Schedule](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshots/payment-schedule.png)
 
 ## Calculations
 The input parameters are inserted in a probability function that calculates the likelihood that the insured event will occur. Below you may find a description of the probability function and how it is used to generate the premium schedule.
@@ -66,11 +66,12 @@ The input parameters are inserted in a probability function that calculates the 
 The Weibull Distribution is a continuous probability distribution widely used in survival analysis and many other fields. [Discover More](https://en.wikipedia.org/wiki/Weibull_distribution)
 For the purpose of this project, below you may find its forumla, which returns the survival probability at age **t**. 
 
-![Weibull Function]()
+![Weibull Function](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshots/weibull-function.png)
+
 Where:
   -  **e** is the Euler's Number
-  -  **t** is the users age at the insurance term
-  -  **a** is equal to the product of the starting constant of 3 multiplied in sequence by:
+  -  **t** is the user age at the insurance term
+  -  **a** is equal to the product of the starting constant 3 multiplied in sequence by:
      - 1.1 if the user is male, 0.9 if the user is female
      - 1.05 if the user is married, 0.95 if the user is not married
      - 0.7 if the user is in good health conditions, 1 if the user is in medium health conditions, 1.3 if the user is in bad health conditions
@@ -83,7 +84,15 @@ The rationale is the following:
 
 Below you may find the distribution function results for a *married female in good health* and for a *not married man with poor health*.  
 
-![Weibull Distribution Example]()
+![Weibull Distribution Example](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshots/weibull-graph.png)
+
+### From the distribution to the premium plan
+
+Given *t* = the user current age and *T* = the user age at the end of the insurance contract, the difference *F(T) - F(t)* returns the probability *p* that the user will survive at the end of the insurance contract.
+Hence, *(1 - p)* is the probability that the user will not survive and the coverage will be paid from the insurance.
+By multiplying this last probability to the coverage amount in USD, we obtain the **expected value of the coverage**.
+The **expected value of the coverage** is multiplied by a mark-up of 10% (which represents the average profit of the insurance) and divided by the term of the policy, to obtain the average yearly premium. 
+The average yearly premium is then multiplied by a last factor that returns the premium at each datestamp following the premium profile (inreasing, decreasing or constant in time): in this way, the payment schedule is populated. 
 
 ## Gitpod Reminders
 
