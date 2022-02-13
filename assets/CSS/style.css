@@ -339,7 +339,6 @@ th, td {
 
 
 /*footer*/
-
 footer .logo {
     height: 2rem;
     margin-top: 10px;
@@ -391,6 +390,27 @@ footer {
 .social-networks {
     text-align: center;
     margin: 0;
+}
+
+/*404 page*/
+
+#error-page > h3,
+#error-page > p,
+#error-page > a {
+    text-align: center;
+    color: #1F497D;
+}
+
+.btn-error {
+    background-color: #1F497D;
+    color: #E1E2DF;
+    border: 1px solid #E1E2DF;
+}
+
+.btn-error:hover {
+    background-color: #E1E2DF;
+    color: #1F497D;
+    border: 1px solid #1F497D;
 }
 
 @media screen and (min-width: 768px) {
