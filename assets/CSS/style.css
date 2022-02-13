@@ -10,6 +10,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    margin: 0;
+}
+
 h1 {
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
@@ -317,6 +321,59 @@ th, td {
 
 .data-input > .row {
     margin: auto;
+}
+
+
+/*footer*/
+header,
+footer {
+    background-color: #E1E2DF;
+    height: 120px;
+    width: 100%;
+    align-items: center;
+}
+
+footer .logo {
+    height: 2rem;
+    margin-top: 10px;
+}
+
+footer {
+    padding: 1px 0 0 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.contacts   {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.contacts div {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.contacts p {
+    color: #1F497D;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.social-networks i{
+    font-size: 150%;
+    color: #1F497D;
+    margin: 10px 15px;
+}
+
+.social-networks > li {
+    display: inline;
+}
+
+.social-networks {
+    text-align: center;
+    margin: 0;
 }
 
 @media screen and (min-width: 768px) {
