@@ -1,10 +1,9 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# CalcSure - Milestone Project 2
 
-Welcome Massimo Ranalli,
+## Overview
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
-
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+CalcSure is a tool designed for insurance companies' websites. The tool allows users to insert their personal data and the parameters of the life insurance policy they would like to subscribe, in order to get a personalized quote based on their unique profile.
+The output consists in a time series of the yearly premium they have to pay in order to get the insurance coverage amount requested.
 
 ## Gitpod Reminders
 
