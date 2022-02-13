@@ -121,8 +121,11 @@ document.addEventListener("DOMContentLoaded", function() {
   collButton.addEventListener('click', function() {
     if (premiumTable.classList.contains('hide')) {
       premiumTable.classList.remove('hide');
+      premiumTable.classList.add('dropdown-table');
+      dataOutput.scrollIntoView({behavior: 'smooth'});
       collButton.innerHTML = "<p>Collapse Payment Schedule</p>"
     } else {
+      premiumTable.classList.remove('dropdown-table');
       premiumTable.classList.add('hide');
       collButton.innerHTML = "<p>Show Payment Schedule</p>"
     }
@@ -303,7 +306,8 @@ function checkInputs(){
     premiumPlan();
     planDescription();
     dataOutput.classList.remove('hide');
-    dataOutput.scrollIntoView();
+    dataOutput.classList.add('dropdown')
+    dataOutput.scrollIntoView({behavior: 'smooth'});
   } else {
     dataOutput.classList.add('hide');
   }
