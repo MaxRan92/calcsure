@@ -34,15 +34,18 @@ The color scheme consists mainly in Yale Blue - commonly used for banking/insura
 In the following paragraphs you will find the description of the different section of the site, in order to understand how the Site Aims were put to practice.
 
 ### Input Area
+
   - In the Personal Information box, the user can insert his data, such as:
     1. Age, between 18 and 60 years old
     2. Gender
     3. Marital Status
     4. Health Conditions (Good, Medium, Poor)
+
   - In the Customize your insurance plan box, the user can insert the following contract parameters:
     1. Coverage amount: the sum to receive if the insured death event occurs
     2. Coverage term: the term, in years, of the insurance policy
     3. Premium profile: the user can pick constant payments, increasing payments and decreasing payments. With increasing premium profile, the first premium is 50% of the average premium and increases to reach a last premium equal to 150% of the average premium. The opposite is true for decreasing premium profile.
+
   - Once the user has selected all the required data (if something is missing, an error will appear), he can click to the Calculate your plan button do see the proposed insurance plan.
 
 ![Input Area](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshorts/input-area.png)
@@ -55,6 +58,32 @@ The output box is first presented in a condensed version with key data: number o
 The user can also click on the "Show payment schedule" button below to show a table with the time series of all the payment along with the subtotal.
 
 ![Payment Schedule](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshorts/payment-schedule.png)
+
+## Calculations
+The input parameters are inserted in a probability function that calculates the likelihood that the insured event will occur. Below you may find a description of the probability function and how it is used to generate the premium schedule.
+
+### Weibull Distribution
+The Weibull Distribution is a continuous probability distribution widely used in survival analysis and many other fields. [Discover More](https://en.wikipedia.org/wiki/Weibull_distribution)
+For the purpose of this project, below you may find its forumla, which returns the survival probability at age **t**. 
+
+![Weibull Function]()
+Where:
+  -  **e** is the Euler's Number
+  -  **t** is the users age at the insurance term
+  -  **a** is equal to the product of the starting constant of 3 multiplied in sequence by:
+     - 1.1 if the user is male, 0.9 if the user is female
+     - 1.05 if the user is married, 0.95 if the user is not married
+     - 0.7 if the user is in good health conditions, 1 if the user is in medium health conditions, 1.3 if the user is in bad health conditions
+  - **b** is a constant equal to 3.5
+
+The rationale is the following:
+  - Statistically, females tendsto live longer than men
+  - Statistically, married people tend to live more than not married people
+  - Statistically, people in a healthy condition live longer than people with poor health 
+
+Below you may find the distribution function results for a *married female in good health* and for a *not married man with poor health*.  
+
+![Weibull Distribution Example]()
 
 ## Gitpod Reminders
 
