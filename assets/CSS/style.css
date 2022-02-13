@@ -395,8 +395,7 @@ footer {
 /*404 page*/
 
 #error-page > h3,
-#error-page > p,
-#error-page > a {
+#error-page > p {
     text-align: center;
     color: #1F497D;
 }
