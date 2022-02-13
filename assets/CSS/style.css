@@ -537,6 +537,10 @@ footer {
         width: 90%;
         height: 90%;
     }
+
+    #collapser {
+        width: 90%;
+    }
 }
 
 
