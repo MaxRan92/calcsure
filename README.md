@@ -29,6 +29,33 @@ The color scheme consists mainly in Yale Blue - commonly used for banking/insura
 
 ![Color Scheme](https://github.com/MaxRan92/calcsure/blob/main/assets/docs/screenshorts/color-palette.png)
 
+## Features 
+
+In the following paragraphs you will find the description of the different section of the site, in order to understand how the Site Aims were put to practice.
+
+### Input Area
+  - In the Personal Information box, the user can insert his data, such as:
+    1. Age, between 18 and 60 years old
+    2. Gender
+    3. Marital Status
+    4. Health Conditions (Good, Medium, Poor)
+  - In the Customize your insurance plan box, the user can insert the following contract parameters:
+    1. Coverage amount: the sum to receive if the insured death event occurs
+    2. Coverage term: the term, in years, of the insurance policy
+    3. Premium profile: the user can pick constant payments, increasing payments and decreasing payments. With increasing premium profile, the first premium is 50% of the average premium and increases to reach a last premium equal to 150% of the average premium. The opposite is true for decreasing premium profile.
+  - Once the user has selected all the required data (if something is missing, an error will appear), he can click to the Calculate your plan button do see the proposed insurance plan.
+
+![Input Area]()
+
+### Output Area
+The output box is first presented in a condensed version with key data: number of payments, total payments and average yearly premium.
+
+![Condensed Output]()
+
+The user can also click on the "Show payment schedule" button below to show a table with the time series of all the payment along with the subtotal.
+
+![Payment Schedule]()
+
 ## Gitpod Reminders
 
 To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
