@@ -121,12 +121,19 @@ document.addEventListener("DOMContentLoaded", function() {
   collButton.addEventListener('click', function() {
     if (premiumTable.classList.contains('hide')) {
       premiumTable.classList.remove('hide');
+      premiumTable.classList.remove('dropback-table');
       premiumTable.classList.add('dropdown-table');
       dataOutput.scrollIntoView({behavior: 'smooth'});
       collButton.innerHTML = "<p>Collapse Payment Schedule</p>"
     } else {
+      const outputHeight = premiumTable.clientHeight;
+      const pxToScroll = Math.min(outputHeight + 100, 700);
+      window.scrollBy(0, -pxToScroll);
       premiumTable.classList.remove('dropdown-table');
-      premiumTable.classList.add('hide');
+      premiumTable.classList.add('dropback-table');
+      setTimeout(function () {
+        premiumTable.classList.add('hide');
+      }, 500);
       collButton.innerHTML = "<p>Show Payment Schedule</p>"
     }
   });
