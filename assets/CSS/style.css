@@ -38,10 +38,6 @@ h4 {
     margin: 2px auto;
 }
 
-a {
-    text-decoration: none;
-}
-
 /* Header */
 header,
 footer {
@@ -403,6 +399,12 @@ footer {
 #error-page > a {
     text-align: center;
     color: #1F497D;
+}
+
+#error-page > a {
+    display: block;
+    width: fit-content;
+    text-decoration: none;
 }
 
 .btn-error {
